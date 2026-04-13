@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Back Street 2000 Festival – Concert Music Festival | Barcelona</title>
+<meta name="description" content="Back Street 2000 Festival, el concert music festival de los años 2000 en Barcelona. Cartel, artistas emergentes, servicios, zonas VIP, blog y entradas.">
+<meta name="keywords" content="concert music festival, back street 2000 festival, artistas emergentes concert music festival, festival música 2000 barcelona, tips concert music festival">
+<link rel="canonical" href="https://backstreet2000festival.com/">
+<meta property="og:title" content="Back Street 2000 Festival – Concert Music Festival Barcelona">
+<meta property="og:description" content="Revive la música de los 2000 en el concert music festival más nostálgico de Barcelona.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --neon-pink: #ff0080;
+    --neon-cyan: #00ffff;
+    --neon-yellow: #ffff00;
+    --neon-purple: #bf00ff;
+    --dark: #050510;
+    --darker: #02020a;
+    --glass: rgba(255,255,255,0.04);
+    --glass-border: rgba(255,255,255,0.1);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--darker); color: #fff; font-family: 'Space Mono', monospace; overflow-x: hidden; }
+  body::before { content:''; position:fixed; inset:0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px); pointer-events:none; z-index:9999; }
+  body::after { content:''; position:fixed; inset:0; background-image: linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,255,0.03) 1px, transparent 1px); background-size: 50px 50px; pointer-events:none; z-index:0; }
+
+  /* ============ NAV ============ */
+  nav { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(2,2,10,0.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(0,255,255,0.2); padding:0 2rem; }
+  .nav-inner { display:flex; align-items:center; justify-content:space-between; max-width:1400px; margin:0 auto; height:64px; }
+  .nav-logo { font-family:'Orbitron',sans-serif; font-weight:900; font-size:13px; letter-spacing:0.15em; color:var(--neon-cyan); text-shadow:0 0 20px var(--neon-cyan); cursor:pointer; white-space:nowrap; }
+  .nav-links { display:flex; gap:0; list-style:none; }
+  .nav-links > li { position:relative; }
+  .nav-links > li > a { display:block; padding:0 14px; line-height:64px; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.6); text-decoration:none; font-family:'Orbitron',sans-serif; font-weight:700; transition:color 0.2s; white-space:nowrap; }
+  .nav-links > li > a:hover, .nav-links > li > a.active { color:var(--neon-pink); text-shadow:0 0 10px var(--neon-pink); }
+  .nav-links > li > a.has-sub::after { content:'▾'; margin-left:4px; font-size:8px; }
+
+  /* SUBMENU */
+  .submenu { display:none; position:absolute; top:64px; left:0; background:rgba(2,2,10,0.98); border:1px solid rgba(0,255,255,0.15); border-top:2px solid var(--neon-cyan); min-width:180px; z-index:2000; }
+  .nav-links > li:hover .submenu { display:block; }
+  .submenu li { list-style:none; }
+  .submenu li a { display:block; padding:10px 18px; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5); text-decoration:none; font-family:'Orbitron',sans-serif; font-weight:700; transition:all 0.2s; border-bottom:1px solid rgba(255,255,255,0.04); white-space:nowrap; }
+  .submenu li a:hover { color:var(--neon-cyan); background:rgba(0,255,255,0.04); padding-left:24px; }
+
+  /* ============ PAGES ============ */
+  .page { display:none; min-height:100vh; padding-top:64px; }
+  .page.active { display:block; }
+
+  /* ============ HERO ============ */
+  #page-home { position:relative; }
+  .hero { position:relative; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:120px 2rem 4rem; overflow:hidden; }
+  .hero-bg { position:absolute; inset:0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(191,0,255,0.15) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 20% 80%, rgba(255,0,128,0.1) 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 80% 20%, rgba(0,255,255,0.08) 0%, transparent 50%); }
+  .stars { position:absolute; inset:0; overflow:hidden; }
+  .star { position:absolute; width:2px; height:2px; background:#fff; border-radius:50%; animation:twinkle var(--d,3s) infinite var(--delay,0s); }
+  @keyframes twinkle { 0%,100%{opacity:0.2} 50%{opacity:1} }
+  .hero-year { font-family:'Orbitron',sans-serif; font-size:clamp(80px,20vw,220px); font-weight:900; line-height:0.85; background:linear-gradient(135deg,var(--neon-cyan) 0%,var(--neon-purple) 50%,var(--neon-pink) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; filter:drop-shadow(0 0 40px rgba(0,255,255,0.4)); position:relative; z-index:2; animation:glitch 8s infinite; }
+  @keyframes glitch { 0%,90%,100%{transform:translate(0)} 91%{transform:translate(-3px,1px)} 92%{transform:translate(3px,-1px)} 93%{transform:translate(0)} }
+  .hero-title { font-family:'Black Ops One',sans-serif; font-size:clamp(24px,5vw,64px); letter-spacing:0.25em; color:#fff; text-shadow:0 0 30px rgba(255,255,255,0.5); position:relative; z-index:2; margin:-10px 0 0; }
+  .hero-subtitle { font-family:'Orbitron',sans-serif; font-size:clamp(9px,1.2vw,13px); letter-spacing:0.5em; color:var(--neon-cyan); text-shadow:0 0 20px var(--neon-cyan); margin:1.5rem 0; position:relative; z-index:2; }
+  .hero-date { display:inline-block; border:1px solid var(--neon-pink); padding:12px 40px; font-family:'Orbitron',sans-serif; font-size:13px; letter-spacing:0.3em; color:var(--neon-pink); text-shadow:0 0 15px var(--neon-pink); box-shadow:0 0 20px rgba(255,0,128,0.3); position:relative; z-index:2; margin-top:1rem; animation:pulse-border 2s infinite; }
+  @keyframes pulse-border { 0%,100%{box-shadow:0 0 20px rgba(255,0,128,0.3)} 50%{box-shadow:0 0 40px rgba(255,0,128,0.6)} }
+  .hero-tags { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:2rem; position:relative; z-index:2; }
+  .tag { font-size:9px; letter-spacing:0.2em; padding:5px 14px; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.6); font-family:'Orbitron',sans-serif; }
+  .scroll-line { width:1px; height:50px; background:linear-gradient(to bottom,rgba(0,255,255,0.8),transparent); margin:2rem auto 0; }
+
+  /* ============ SECTIONS ============ */
+  section, .content-section { position:relative; z-index:1; padding:80px 2rem; max-width:1200px; margin:0 auto; }
+  .section-header { margin-bottom:50px; }
+  .section-num { font-family:'Orbitron',sans-serif; font-size:11px; letter-spacing:0.4em; color:var(--neon-cyan); opacity:0.6; margin-bottom:8px; }
+  .section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(44px,7vw,88px); line-height:0.9; background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,0.4) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .section-line { width:80px; height:2px; background:linear-gradient(90deg,var(--neon-pink),transparent); margin-top:16px; }
+  .section-intro { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.9; max-width:800px; margin-bottom:40px; }
+
+  /* ============ TICKER ============ */
+  .ticker-wrap { background:var(--neon-pink); overflow:hidden; padding:10px 0; position:relative; z-index:1; }
+  .ticker { display:flex; animation:ticker 30s linear infinite; white-space:nowrap; }
+  .ticker-item { font-family:'Black Ops One',sans-serif; font-size:14px; letter-spacing:0.1em; color:var(--dark); padding:0 40px; }
+  @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* ============ CARDS ============ */
+  .cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2px; }
+  .card { background:var(--glass); border:1px solid var(--glass-border); padding:32px 28px; position:relative; overflow:hidden; transition:border-color 0.3s,transform 0.3s; }
+  .card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--accent,var(--neon-cyan)),transparent); opacity:0; transition:opacity 0.3s; }
+  .card:hover { border-color:rgba(0,255,255,0.3); transform:translateY(-2px); }
+  .card:hover::before { opacity:1; }
+  .card-icon { font-size:32px; margin-bottom:16px; }
+  .card-title { font-family:'Orbitron',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.15em; color:var(--neon-cyan); margin-bottom:10px; }
+  .card-text { font-size:12px; color:rgba(255,255,255,0.5); line-height:1.8; }
+  .card-price { font-family:'Orbitron',sans-serif; font-size:22px; font-weight:900; color:var(--neon-yellow); text-shadow:0 0 20px rgba(255,255,0,0.5); margin-top:16px; }
+
+  /* ============ CARTEL ============ */
+  .cartel-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; margin-top:40px; }
+  .cartel-headliner { grid-column:1/-1; text-align:center; padding:40px; background:var(--glass); border:1px solid rgba(0,255,255,0.15); position:relative; overflow:hidden; }
+  .cartel-headliner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,255,255,0.05) 0%,transparent 70%); }
+  .cartel-headliner .artist-name { font-family:'Black Ops One',sans-serif; font-size:clamp(28px,5vw,72px); letter-spacing:0.1em; color:var(--neon-cyan); text-shadow:0 0 40px var(--neon-cyan); position:relative; }
+  .cartel-secondary { text-align:center; padding:28px 20px; background:var(--glass); border:1px solid rgba(255,0,128,0.1); }
+  .cartel-secondary .artist-name { font-family:'Bebas Neue',sans-serif; font-size:clamp(22px,3.5vw,44px); letter-spacing:0.1em; color:var(--neon-pink); text-shadow:0 0 20px var(--neon-pink); }
+  .cartel-tier3 { grid-column:1/-1; display:flex; flex-wrap:wrap; justify-content:center; gap:16px 32px; padding:28px; background:var(--glass); border:1px solid rgba(255,255,255,0.05); }
+  .cartel-tier3 .artist-name { font-family:'Bebas Neue',sans-serif; font-size:clamp(14px,2vw,24px); letter-spacing:0.08em; color:rgba(255,255,255,0.7); }
+  .artist-day { font-size:10px; letter-spacing:0.2em; color:rgba(255,255,255,0.3); font-family:'Orbitron',sans-serif; margin-top:4px; }
+
+  /* ============ VIP ============ */
+  .vip-section { background:linear-gradient(135deg,rgba(191,0,255,0.1) 0%,rgba(255,0,128,0.05) 100%); border:1px solid rgba(191,0,255,0.3); padding:60px; text-align:center; position:relative; overflow:hidden; margin-top:40px; }
+  .vip-section::before { content:'VIP'; position:absolute; font-family:'Black Ops One',sans-serif; font-size:280px; opacity:0.03; top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; color:var(--neon-purple); }
+  .vip-title { font-family:'Black Ops One',sans-serif; font-size:clamp(36px,7vw,88px); color:var(--neon-purple); text-shadow:0 0 40px var(--neon-purple); letter-spacing:0.1em; }
+  .vip-perks { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin:28px 0; }
+  .vip-perk { border:1px solid rgba(191,0,255,0.4); padding:10px 20px; font-size:10px; letter-spacing:0.15em; color:rgba(255,255,255,0.7); font-family:'Orbitron',sans-serif; }
+
+  /* ============ BLOG ============ */
+  .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:40px; }
+  .blog-card { background:var(--glass); border:1px solid var(--glass-border); padding:28px; cursor:pointer; transition:border-color 0.3s; }
+  .blog-card:hover { border-color:var(--neon-cyan); }
+  .blog-card.featured { grid-column:1/-1; }
+  .blog-tag { font-family:'Orbitron',sans-serif; font-size:9px; letter-spacing:0.3em; color:var(--neon-pink); margin-bottom:12px; }
+  .blog-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(18px,2.5vw,32px); line-height:1; letter-spacing:0.05em; margin-bottom:10px; }
+  .blog-excerpt { font-size:11px; color:rgba(255,255,255,0.4); line-height:1.7; }
+  .blog-meta { font-size:10px; color:rgba(255,255,255,0.3); font-family:'Orbitron',sans-serif; margin-top:14px; letter-spacing:0.1em; }
+  .blog-read-more { display:inline-block; margin-top:14px; font-family:'Orbitron',sans-serif; font-size:9px; letter-spacing:0.2em; color:var(--neon-cyan); border:1px solid rgba(0,255,255,0.3); padding:6px 14px; text-decoration:none; transition:all 0.2s; cursor:pointer; }
+  .blog-read-more:hover { background:rgba(0,255,255,0.08); color:var(--neon-cyan); }
+
+  /* ============ BLOG POST (single) ============ */
+  .blog-post { max-width:860px; margin:0 auto; padding:80px 2rem; position:relative; z-index:1; }
+  .blog-post h1 { font-family:'Black Ops One',sans-serif; font-size:clamp(28px,5vw,56px); line-height:1.1; color:var(--neon-cyan); text-shadow:0 0 30px rgba(0,255,255,0.3); margin-bottom:24px; letter-spacing:0.05em; }
+  .blog-post h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(24px,3.5vw,40px); color:#fff; letter-spacing:0.08em; margin:40px 0 14px; }
+  .blog-post h3 { font-family:'Orbitron',sans-serif; font-size:14px; letter-spacing:0.15em; color:var(--neon-cyan); margin:28px 0 10px; font-weight:700; }
+  .blog-post h4 { font-family:'Orbitron',sans-serif; font-size:11px; letter-spacing:0.12em; color:var(--neon-pink); margin:20px 0 8px; font-weight:700; }
+  .blog-post p { font-size:13px; color:rgba(255,255,255,0.6); line-height:1.9; margin-bottom:18px; }
+  .blog-post ul { margin:14px 0 18px 20px; }
+  .blog-post ul li { font-size:12px; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:6px; }
+  .blog-post ul li::marker { color:var(--neon-cyan); }
+  .blog-post-header { border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:28px; margin-bottom:40px; }
+  .blog-post-meta { font-family:'Orbitron',sans-serif; font-size:9px; letter-spacing:0.3em; color:var(--neon-pink); margin-bottom:16px; }
+  .blog-post-img { width:100%; height:280px; background:linear-gradient(135deg,rgba(0,255,255,0.08),rgba(191,0,255,0.08)); border:1px solid rgba(0,255,255,0.15); display:flex; align-items:center; justify-content:center; margin:32px 0; font-size:60px; opacity:0.4; }
+  .back-btn { display:inline-flex; align-items:center; gap:8px; font-family:'Orbitron',sans-serif; font-size:9px; letter-spacing:0.2em; color:rgba(255,255,255,0.4); border:1px solid rgba(255,255,255,0.1); padding:8px 18px; cursor:pointer; transition:all 0.2s; margin-bottom:40px; background:none; }
+  .back-btn:hover { color:var(--neon-cyan); border-color:var(--neon-cyan); }
+
+  /* ============ ABOUT ============ */
+  .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; margin-top:40px; }
+  .about-text { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.9; }
+  .about-text p { margin-bottom:16px; }
+  .about-stats { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+  .stat-block { background:var(--glass); border:1px solid var(--glass-border); padding:24px; text-align:center; }
+  .stat-num { font-family:'Orbitron',sans-serif; font-size:32px; font-weight:900; color:var(--neon-cyan); text-shadow:0 0 20px var(--neon-cyan); }
+  .stat-label { font-size:10px; letter-spacing:0.2em; color:rgba(255,255,255,0.3); font-family:'Orbitron',sans-serif; margin-top:8px; }
+
+  /* ============ FAQ ============ */
+  .faq-list { margin-top:40px; }
+  .faq-item { border-bottom:1px solid rgba(255,255,255,0.05); overflow:hidden; }
+  .faq-q { padding:20px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-family:'Orbitron',sans-serif; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.8); transition:color 0.2s; }
+  .faq-q:hover { color:var(--neon-cyan); }
+  .faq-arrow { font-size:18px; transition:transform 0.3s; color:var(--neon-cyan); opacity:0.6; }
+  .faq-item.open .faq-arrow { transform:rotate(45deg); }
+  .faq-a { max-height:0; overflow:hidden; transition:max-height 0.4s ease,padding 0.3s; font-size:12px; color:rgba(255,255,255,0.4); line-height:1.8; }
+  .faq-item.open .faq-a { max-height:200px; padding-bottom:20px; }
+
+  /* ============ CONTACT ============ */
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:40px; }
+  .contact-form { background:var(--glass); border:1px solid var(--glass-border); padding:40px; }
+  .contact-info { background:linear-gradient(135deg,rgba(0,255,255,0.05) 0%,rgba(191,0,255,0.05) 100%); border:1px solid rgba(0,255,255,0.15); padding:40px; }
+  .form-group { margin-bottom:20px; }
+  .form-label { display:block; font-family:'Orbitron',sans-serif; font-size:9px; letter-spacing:0.3em; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+  .form-input,.form-textarea { width:100%; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:12px 16px; font-family:'Space Mono',monospace; font-size:12px; outline:none; transition:border-color 0.3s; }
+  .form-input:focus,.form-textarea:focus { border-color:var(--neon-cyan); }
+  .form-textarea { height:120px; resize:none; }
+  .btn-submit { background:transparent; border:1px solid var(--neon-pink); color:var(--neon-pink); padding:14px 40px; font-family:'Orbitron',sans-serif; font-size:11px; letter-spacing:0.3em; cursor:pointer; text-transform:uppercase; transition:all 0.3s; text-shadow:0 0 10px var(--neon-pink); }
+  .btn-submit:hover { background:var(--neon-pink); color:var(--dark); text-shadow:none; }
+  .contact-detail { margin-bottom:24px; }
+  .contact-detail-label { font-family:'Orbitron',sans-serif; font-size:9px; letter-spacing:0.3em; color:var(--neon-cyan); opacity:0.6; margin-bottom:6px; }
+  .contact-detail-value { font-size:13px; color:rgba(255,255,255,0.7); }
+
+  /* ============ ZONAS ============ */
+  .zonas-map { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(3,120px); gap:2px; margin-top:40px; }
+  .zona-block { display:flex; flex-direction:column; justify-content:flex-end; padding:16px; position:relative; overflow:hidden; cursor:pointer; transition:all 0.3s; background:var(--glass); border:1px solid var(--glass-border); }
+  .zona-block:hover { transform:scale(1.02); z-index:2; border-color:rgba(0,255,255,0.3); }
+  .zona-block.large { grid-column:span 2; }
+  .zona-block.tall { grid-row:span 2; }
+  .zona-name { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:0.1em; }
+  .zona-cap { font-size:10px; letter-spacing:0.2em; color:rgba(255,255,255,0.4); font-family:'Orbitron',sans-serif; }
+
+  /* ============ LOCKERS ============ */
+  .lockers-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:40px; }
+  .locker-card { background:var(--glass); border:1px solid var(--glass-border); padding:32px; text-align:center; transition:all 0.3s; }
+  .locker-card:hover { border-color:var(--neon-yellow); }
+  .locker-name { font-family:'Bebas Neue',sans-serif; font-size:48px; letter-spacing:0.05em; color:var(--neon-yellow); text-shadow:0 0 20px rgba(255,255,0,0.4); }
+  .locker-desc { font-size:11px; color:rgba(255,255,255,0.4); line-height:1.7; margin-top:12px; }
+
+  /* ============ TRANSPORT ============ */
+  .transport-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:2px; }
+  .transport-card { background:var(--glass); border:1px solid var(--glass-border); padding:20px; text-align:center; }
+  .transport-icon { font-size:28px; margin-bottom:10px; }
+  .transport-title { font-family:'Orbitron',sans-serif; font-size:10px; letter-spacing:0.2em; color:var(--neon-cyan); margin-bottom:8px; }
+  .transport-text { font-size:11px; color:rgba(255,255,255,0.4); line-height:1.6; }
+
+  /* ============ FOOTER ============ */
+  footer { border-top:1px solid rgba(255,255,255,0.05); padding:60px 2rem 40px; text-align:center; position:relative; z-index:1; }
+  .footer-logo { font-family:'Orbitron',sans-serif; font-size:clamp(20px,4vw,40px); font-weight:900; color:var(--neon-cyan); text-shadow:0 0 30px var(--neon-cyan); letter-spacing:0.2em; margin-bottom:8px; }
+  .footer-tagline { font-size:10px; letter-spacing:0.4em; color:rgba(255,255,255,0.2); font-family:'Orbitron',sans-serif; margin-bottom:40px; }
+  .footer-links { display:flex; justify-content:center; flex-wrap:wrap; gap:8px 20px; list-style:none; margin-bottom:40px; }
+  .footer-links li a { font-size:10px; letter-spacing:0.15em; color:rgba(255,255,255,0.3); text-decoration:none; font-family:'Orbitron',sans-serif; cursor:pointer; transition:color 0.2s; }
+  .footer-links li a:hover { color:var(--neon-pink); }
+  .footer-copy { font-size:10px; color:rgba(255,255,255,0.15); letter-spacing:0.1em; }
+
+  /* ============ MAP ============ */
+  .map-container { margin-top:40px; border:1px solid rgba(0,255,255,0.2); height:360px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; background:rgba(0,255,255,0.02); }
+  .map-grid-viz { position:absolute; inset:0; background-image:linear-gradient(rgba(0,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,255,0.05) 1px,transparent 1px); background-size:30px 30px; }
+  .map-pin { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; z-index:2; }
+  .map-pin-dot { width:20px; height:20px; background:var(--neon-pink); border-radius:50%; margin:0 auto 8px; animation:ping 2s infinite; }
+  @keyframes ping { 0%{box-shadow:0 0 0 0 rgba(255,0,128,0.6)} 100%{box-shadow:0 0 0 30px rgba(255,0,128,0)} }
+  .map-info { font-family:'Orbitron',sans-serif; font-size:11px; letter-spacing:0.15em; color:var(--neon-cyan); line-height:1.8; }
+
+  /* ============ MULTIMEDIA ============ */
+  .multimedia-grid { display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(2,160px); gap:2px; margin-top:40px; }
+  .media-block { position:relative; overflow:hidden; cursor:pointer; background:var(--glass); border:1px solid var(--glass-border); display:flex; align-items:center; justify-content:center; transition:all 0.3s; }
+  .media-block:hover { border-color:var(--neon-cyan); }
+  .media-block:hover .media-overlay { opacity:1; }
+  .media-block.wide { grid-column:span 2; }
+  .media-block.tall { grid-row:span 2; }
+  .media-overlay { position:absolute; inset:0; background:rgba(0,255,255,0.05); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; flex-direction:column; gap:8px; }
+  .media-play { width:50px; height:50px; border:2px solid var(--neon-cyan); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; }
+  .media-label { font-family:'Orbitron',sans-serif; font-size:10px; letter-spacing:0.2em; color:var(--neon-cyan); }
+  .media-placeholder { font-size:clamp(28px,5vw,52px); opacity:0.2; }
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:768px){
+    .cartel-grid{grid-template-columns:1fr} .about-grid{grid-template-columns:1fr} .blog-grid{grid-template-columns:1fr} .blog-card.featured{grid-column:auto} .contact-grid{grid-template-columns:1fr} .lockers-grid{grid-template-columns:1fr} .transport-grid{grid-template-columns:1fr 1fr} .zonas-map{grid-template-columns:1fr 1fr} .zona-block.large{grid-column:auto} .multimedia-grid{grid-template-columns:1fr 1fr} .media-block.wide{grid-column:auto} .nav-links{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('home')">BS 2000 ◆ FESTIVAL</div>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('home');return false;" id="nav-home" class="active">Home</a></li>
+      <li>
+        <a href="#" class="has-sub" onclick="return false;">Cartel &amp; Info</a>
+        <ul class="submenu">
+          <li><a href="#" onclick="showPage('cartel');return false;">Cartel / Line Up</a></li>
+          <li><a href="#" onclick="showPage('info');return false;">Información General</a></li>
+          <li><a href="#" onclick="showPage('llegar');return false;">Cómo Llegar</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="has-sub" onclick="return false;">Servicios</a>
+        <ul class="submenu">
+          <li><a href="#" onclick="showPage('restauracion');return false;">Restauración</a></li>
+          <li><a href="#" onclick="showPage('zonas');return false;">Zonas del Recinto</a></li>
+          <li><a href="#" onclick="showPage('lockers');return false;">Lockers</a></li>
+          <li><a href="#" onclick="showPage('vip');return false;">Zona VIP</a></li>
+        </ul>
+      </li>
+      <li><a href="#" onclick="showPage('blog');return false;" id="nav-blog">Blog</a></li>
+      <li><a href="#" onclick="showPage('about');return false;" id="nav-about">About Us</a></li>
+      <li><a href="#" onclick="showPage('faq');return false;" id="nav-faq">FAQ</a></li>
+      <li><a href="#" onclick="showPage('contacto');return false;" id="nav-contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ PAGE: HOME ============ -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="stars" id="stars"></div>
+    <div class="hero-year">2000</div>
+    <div class="hero-title">BACK STREET FESTIVAL</div>
+    <div class="hero-subtitle">◆ EL CONCERT MUSIC FESTIVAL DE LOS AÑOS 2000 ◆</div>
+    <div class="hero-date">BARCELONA · ENTRADAS YA DISPONIBLES</div>
+    <div class="hero-tags">
+      <span class="tag">POP</span><span class="tag">R&amp;B</span><span class="tag">DANCE</span><span class="tag">LATIN</span><span class="tag">POP ESPAÑOL</span><span class="tag">DJs THROWBACK</span>
+    </div>
+    <div class="scroll-line"></div>
+  </div>
+
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span class="ticker-item">★ BACK STREET 2000 FESTIVAL</span><span class="ticker-item">★ CONCERT MUSIC FESTIVAL</span><span class="ticker-item">★ BARCELONA</span><span class="ticker-item">★ LA MÚSICA DE LOS 2000</span><span class="ticker-item">★ BACKSTREET BOYS · BRITNEY · SHAKIRA</span><span class="ticker-item">★ ENTRADAS DISPONIBLES</span>
+      <span class="ticker-item">★ BACK STREET 2000 FESTIVAL</span><span class="ticker-item">★ CONCERT MUSIC FESTIVAL</span><span class="ticker-item">★ BARCELONA</span><span class="ticker-item">★ LA MÚSICA DE LOS 2000</span><span class="ticker-item">★ BACKSTREET BOYS · BRITNEY · SHAKIRA</span><span class="ticker-item">★ ENTRADAS DISPONIBLES</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-header">
+      <div class="section-num">01 / BIENVENIDOS</div>
+      <div class="section-title">EL FESTIVAL</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">Si creciste escuchando música en un MP3, viendo videoclips en MTV o grabando canciones en CDs para tus amigos, <strong>Back Street 2000 Festival</strong> es el lugar perfecto para volver a vivir esa época. Un concert music festival dedicado a la música que marcó los años 2000: desde el pop internacional hasta el dance, el R&amp;B o los clásicos que sonaban en todas las fiestas.</p>
+    <div class="cards-grid">
+      <div class="card"><div class="card-icon">🎵</div><div class="card-title">MÚSICA DE LOS 2000</div><div class="card-text">Revive los grandes hits del cambio de milenio. Pop, R&amp;B, dance y las canciones que formaron parte de tu adolescencia, en directo y con toda la energía.</div></div>
+      <div class="card" style="--accent:var(--neon-pink)"><div class="card-icon">🌟</div><div class="card-title">ARTISTAS INTERNACIONALES</div><div class="card-text">Backstreet Boys, Britney Spears, Rihanna, Shakira y muchos más. El cartel más nostálgico del verano en un mismo escenario en Barcelona.</div></div>
+      <div class="card" style="--accent:var(--neon-purple)"><div class="card-icon">🎭</div><div class="card-title">EXPERIENCIA COMPLETA</div><div class="card-text">Zonas temáticas inspiradas en los 2000, food trucks, zona VIP, lockers, zona interactiva y el ambiente de un festival único e irrepetible.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <div class="section-num">02 / ARTISTAS EMERGENTES</div>
+      <div class="section-title">NUEVAS PROMESAS</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">Los <strong>artistas emergentes del concert music festival</strong> han ganado gran protagonismo en los últimos años, atrayendo especialmente al público joven. Aportan frescura con sonidos innovadores: pop urbano con fusiones latinas, electrónica emocional, indie experimental y fusión de géneros globales. En Back Street 2000, estos talentos tendrán aún más protagonismo junto a los grandes nombres del cartel.</p>
+    <div class="cards-grid">
+      <div class="card"><div class="card-icon">🚀</div><div class="card-title">ESCENARIO EMERGENTE</div><div class="card-text">Espacio dedicado a los nuevos talentos. Descubre a los artistas que marcarán los próximos años antes de que llenen grandes estadios.</div></div>
+      <div class="card" style="--accent:var(--neon-pink)"><div class="card-icon">📱</div><div class="card-title">VIRALIZACIÓN DIGITAL</div><div class="card-text">Artistas con fuerte presencia en redes sociales y capacidad de llegar a audiencias globales. La nueva generación del concert music festival.</div></div>
+      <div class="card" style="--accent:var(--neon-yellow)"><div class="card-icon">🎶</div><div class="card-title">FUSIÓN DE GÉNEROS</div><div class="card-text">Pop urbano, electrónica emocional, indie experimental e influencias afrobeat. Los sonidos más innovadores del panorama musical actual.</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: CARTEL ============ -->
+<div id="page-cartel" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">02 / CARTEL</div>
+      <div class="section-title">LINE UP 2026</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">El cartel de Back Street 2000 Festival reúne artistas internacionales y nacionales que formaron parte de los grandes éxitos de los 2000, junto a DJs especializados en sesiones throwback. Un concert music festival donde cada nombre representa una parte de la historia musical de una generación.</p>
+    <div class="cartel-grid">
+      <div class="cartel-headliner">
+        <div class="artist-day">ARTISTAS INTERNACIONALES · ESCENARIO PRINCIPAL</div>
+        <div class="artist-name">BACKSTREET BOYS</div>
+        <div class="artist-day" style="margin-top:8px">+ BRITNEY SPEARS · RIHANNA · SHAKIRA</div>
+      </div>
+      <div class="cartel-secondary"><div class="artist-day">INTERNACIONALES</div><div class="artist-name" style="font-size:clamp(18px,3vw,40px)">JUSTIN TIMBERLAKE</div></div>
+      <div class="cartel-secondary" style="--accent:var(--neon-purple)"><div class="artist-day">INTERNACIONALES</div><div class="artist-name" style="font-size:clamp(18px,3vw,40px);color:var(--neon-purple);text-shadow:0 0 20px var(--neon-purple)">AVRIL LAVIGNE</div></div>
+      <div class="cartel-secondary"><div class="artist-day">NACIONALES</div><div class="artist-name" style="font-size:clamp(18px,3vw,40px)">DAVID BISBAL</div></div>
+      <div class="cartel-tier3">
+        <div><div class="artist-name">BLACK EYED PEAS</div><div class="artist-day">INT.</div></div>
+        <div><div class="artist-name">NELLY FURTADO</div><div class="artist-day">INT.</div></div>
+        <div><div class="artist-name">KATY PERRY</div><div class="artist-day">INT.</div></div>
+        <div><div class="artist-name">USHER</div><div class="artist-day">INT.</div></div>
+        <div><div class="artist-name">LA OREJA DE VAN GOGH</div><div class="artist-day">NAC.</div></div>
+        <div><div class="artist-name">EL CANTO DEL LOCO</div><div class="artist-day">NAC.</div></div>
+        <div><div class="artist-name">AMARAL</div><div class="artist-day">NAC.</div></div>
+        <div><div class="artist-name">FANGORIA</div><div class="artist-day">NAC.</div></div>
+        <div><div class="artist-name">MELENDI</div><div class="artist-day">NAC.</div></div>
+        <div><div class="artist-name">CHENOA</div><div class="artist-day">NAC.</div></div>
+        <div><div class="artist-name">DJ SAMMY</div><div class="artist-day">DJ</div></div>
+        <div><div class="artist-name">JUAN MAGÁN</div><div class="artist-day">DJ</div></div>
+        <div><div class="artist-name">DJ NANO</div><div class="artist-day">DJ</div></div>
+        <div><div class="artist-name">BRIAN CROSS</div><div class="artist-day">DJ</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: RESTAURACION ============ -->
+<div id="page-restauracion" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">04 / RESTAURACIÓN</div>
+      <div class="section-title">FOOD &amp; DRINK</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">En Back Street 2000 Festival creemos que la <strong>comida en un concert music festival</strong> es parte esencial de la experiencia. La zona de restauración se ha diseñado con food trucks, puestos gastronómicos y barras de bebidas distribuidos por todo el recinto, con estética tematizada en los años 2000: colores llamativos, detalles retro y carteles pop.</p>
+    <div class="cards-grid">
+      <div class="card"><div class="card-icon">🍔</div><div class="card-title">FOOD TRUCKS</div><div class="card-text">Hamburguesas gourmet, pizzas artesanales, tacos mexicanos, hot dogs estilo americano y street food internacional. La comida del concert music festival más variada de Barcelona.</div></div>
+      <div class="card" style="--accent:var(--neon-pink)"><div class="card-icon">🍺</div><div class="card-title">BARRAS DE BEBIDAS</div><div class="card-text">Refrescos, agua, cerveza, bebidas energéticas y combinados. Varias barras distribuidas por el recinto para facilitar el acceso y evitar largas colas.</div></div>
+      <div class="card" style="--accent:var(--neon-purple)"><div class="card-icon">🌏</div><div class="card-title">COCINA INTERNACIONAL</div><div class="card-text">Comida asiática (noodles, arroz salteado, bowls), cocina mediterránea, bocadillos y wraps. Una propuesta gastronómica para todos los gustos.</div></div>
+      <div class="card"><div class="card-icon">🌱</div><div class="card-title">OPCIONES VEGANAS</div><div class="card-text">Hamburguesas vegetales, bowls saludables, ensaladas frescas y snacks ligeros. Ingredientes claramente etiquetados para dietas específicas.</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: ZONAS ============ -->
+<div id="page-zonas" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">05 / ZONAS</div>
+      <div class="section-title">MAPA DEL RECINTO</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">Las <strong>zonas del concert music festival</strong> están pensadas para que cada asistente viva el festival a su manera. Escenarios principales con pantallas gigantes, zona chill para descansar, zona interactiva inspirada en los 2000, meeting point y zonas de restauración distribuidas estratégicamente. Un recinto diseñado para disfrutar.</p>
+    <div class="zonas-map">
+      <div class="zona-block large tall" style="border-color:rgba(0,255,255,0.3)"><div class="zona-name" style="color:var(--neon-cyan);font-size:28px">ESCENARIO PRINCIPAL</div><div class="zona-cap">CAPACIDAD: 20.000 PERSONAS</div></div>
+      <div class="zona-block" style="border-color:rgba(255,0,128,0.2)"><div class="zona-name" style="color:var(--neon-pink)">ESCENARIO B</div><div class="zona-cap">CAP: 8.000</div></div>
+      <div class="zona-block" style="border-color:rgba(191,0,255,0.2)"><div class="zona-name" style="color:var(--neon-purple)">ESCENARIO EMERGENTE</div><div class="zona-cap">CAP: 3.000</div></div>
+      <div class="zona-block" style="border-color:rgba(255,255,0,0.15)"><div class="zona-name" style="color:var(--neon-yellow)">ZONA CHILL</div><div class="zona-cap">DESCANSO Y RELAX</div></div>
+      <div class="zona-block"><div class="zona-name">ZONA INTERACTIVA</div><div class="zona-cap">FOTOS Y EXPERIENCIAS</div></div>
+      <div class="zona-block" style="border-color:rgba(255,0,128,0.15)"><div class="zona-name" style="color:var(--neon-pink)">FOOD VILLAGE</div><div class="zona-cap">+20 PUESTOS</div></div>
+      <div class="zona-block"><div class="zona-name">MEETING POINT</div><div class="zona-cap">PUNTO DE ENCUENTRO</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: LOCKERS ============ -->
+<div id="page-lockers" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">06 / LOCKERS</div>
+      <div class="section-title">TAQUILLAS</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">El servicio de lockers de Back Street 2000 Festival permite guardar tus pertenencias personales de forma segura durante todo el festival: mochilas, chaquetas, cámaras, power banks y accesorios. Así puedes bailar con mayor libertad, moverte con facilidad entre escenarios y disfrutar sin preocuparte por nada.</p>
+    <div class="lockers-grid">
+      <div class="locker-card"><div class="locker-name">S</div><div class="locker-desc">Taquilla pequeña para móvil, cartera y objetos pequeños. Acceso ilimitado durante todo el festival.</div></div>
+      <div class="locker-card"><div class="locker-name">M</div><div class="locker-desc">Ideal para mochila pequeña, chaqueta y cámara. Sistema de cierre seguro incluido.</div></div>
+      <div class="locker-card"><div class="locker-name">L</div><div class="locker-desc">Para mochila grande, ropa extra y todo lo que necesites. La mayor comodidad del festival.</div></div>
+    </div>
+    <div style="margin-top:16px;padding:20px;background:var(--glass);border:1px solid rgba(0,255,255,0.1);font-size:11px;color:rgba(255,255,255,0.4);line-height:1.8;font-family:'Orbitron',sans-serif;letter-spacing:0.05em">◆ Lockers disponibles en zona de entrada principal y zona secundaria · Acceso fácil y rápido en cualquier momento del evento</div>
+  </section>
+</div>
+
+<!-- ============ PAGE: VIP ============ -->
+<div id="page-vip" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">07 / ZONA VIP</div>
+      <div class="section-title">ZONA VIP</div>
+      <div class="section-line" style="background:linear-gradient(90deg,var(--neon-purple),transparent)"></div>
+    </div>
+    <p class="section-intro">Para quienes buscan vivir el concert music festival de una forma más exclusiva, Back Street 2000 ofrece una Zona VIP diseñada para disfrutar del evento con mayor comodidad y servicios adicionales. Combina la emoción de los conciertos con espacios más cómodos, barras exclusivas y las mejores vistas de los escenarios.</p>
+    <div class="vip-section">
+      <div class="vip-title">★ VIP ★</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.5);margin:16px 0;letter-spacing:0.1em">UNA EXPERIENCIA PREMIUM EN EL FESTIVAL</div>
+      <div class="vip-perks">
+        <div class="vip-perk">MEJOR VISIBILIDAD</div><div class="vip-perk">ZONAS MENOS MASIFICADAS</div><div class="vip-perk">BARRAS EXCLUSIVAS</div><div class="vip-perk">SOFÁS Y LOUNGE</div><div class="vip-perk">ACCESO PRIORITARIO</div><div class="vip-perk">AMBIENTE RELAJADO</div>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.4);max-width:600px;margin:20px auto;line-height:1.8">Espacios reservados con mejor visión de los escenarios, zonas lounge con sofás y mesas, y barras de bebidas exclusivas para olvidarte de las colas. Vive el festival desde una perspectiva privilegiada.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: INFO ============ -->
+<div id="page-info" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">08 / INFO</div>
+      <div class="section-title">INFORMACIÓN</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">Toda la información que necesitas para preparar tu visita al concert music festival. Horarios, normativa de acceso, objetos permitidos, punto de encuentro y todo lo que debes saber para disfrutar al máximo del Back Street 2000 Festival en Barcelona.</p>
+    <div class="cards-grid">
+      <div class="card"><div class="card-title">HORARIOS</div><div class="card-text">El festival está diseñado para disfrutar desde la tarde hasta la noche. Las primeras horas son más relajadas, perfectas para explorar el recinto. A medida que cae la noche, los conciertos principales crean los momentos más intensos.</div></div>
+      <div class="card" style="--accent:var(--neon-pink)"><div class="card-title">POLÍTICA DE ACCESO</div><div class="card-text">Acceso con entrada y DNI o pasaporte. Las condiciones de reentrada se especificarán en la entrada. Consulta la normativa completa antes del evento en la web oficial.</div></div>
+      <div class="card" style="--accent:var(--neon-purple)"><div class="card-title">OBJETOS PERMITIDOS</div><div class="card-text">Se permite agua en botella sellada. No se permiten bebidas alcohólicas, cristal ni alimentos con envases metálicos. Consulta la normativa completa para más información.</div></div>
+      <div class="card"><div class="card-title">QUÉ LLEVAR</div><div class="card-text">Entrada, DNI, móvil cargado (recomendamos batería externa), ropa cómoda y adaptada al clima, protección solar para jornadas diurnas y calzado cómodo.</div></div>
+      <div class="card" style="--accent:var(--neon-yellow)"><div class="card-title">MEETING POINT</div><div class="card-text">El recinto dispone de un meeting point claramente señalizado para reunirte con tu grupo si os separáis. Acordad un punto de encuentro antes de entrar al festival.</div></div>
+      <div class="card"><div class="card-title">SEGURIDAD</div><div class="card-text">El recinto cuenta con medidas de seguridad y personal especializado durante todo el evento. También hay puntos médicos distribuidos por el recinto para garantizar la seguridad de todos.</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: CÓMO LLEGAR ============ -->
+<div id="page-llegar" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">11 / CÓMO LLEGAR</div>
+      <div class="section-title">CÓMO LLEGAR</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">Llegar a Back Street 2000 Festival es muy sencillo gracias a las diferentes opciones de transporte disponibles. El festival está pensado para recibir asistentes de diferentes ciudades, situado en una zona bien conectada y accesible. Planifica tu trayecto con antelación y llega con tiempo suficiente.</p>
+    <div class="map-container"><div class="map-grid-viz"></div><div class="map-pin"><div class="map-pin-dot"></div><div class="map-info">BACK STREET 2000 FESTIVAL<br>BARCELONA<br><span style="color:rgba(255,255,255,0.4)">Recinto bien comunicado con transporte público</span></div></div></div>
+    <div class="transport-grid">
+      <div class="transport-card"><div class="transport-icon">🚇</div><div class="transport-title">METRO Y BUS URBANO</div><div class="transport-text">La mejor forma de llegar. Paradas cerca del recinto, a pocos minutos andando. Consulta horarios con antelación especialmente para la vuelta.</div></div>
+      <div class="transport-card"><div class="transport-icon">🚌</div><div class="transport-title">BUS LANZADERA</div><div class="transport-text">Servicio especial del festival que conecta diferentes puntos de la ciudad con el recinto durante todo el evento. Cómodo y sin preocupaciones.</div></div>
+      <div class="transport-card"><div class="transport-icon">🚗</div><div class="transport-title">COCHE / MOTO</div><div class="transport-text">Zonas de aparcamiento habilitadas con accesos señalizados y personal de apoyo. Llega con antelación para evitar congestiones.</div></div>
+      <div class="transport-card"><div class="transport-icon">🚕</div><div class="transport-title">TAXI / VTC</div><div class="transport-text">Uber, Cabify y taxis disponibles. Llegada directa sin preocuparte por el aparcamiento. Recomendamos compartir trayecto con amigos.</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: ABOUT ============ -->
+<div id="page-about" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">12 / ABOUT US</div>
+      <div class="section-title">ABOUT US</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div>
+        <div class="about-text">
+          <p>Back Street 2000 Festival nace con una idea muy clara: recuperar la esencia de una de las épocas más icónicas de la música y la cultura pop. Los años 2000 marcaron a toda una generación con grandes éxitos, artistas inolvidables y momentos que todavía hoy siguen formando parte de nuestros recuerdos.</p>
+          <p>La música de los 2000 sigue más viva que nunca. A día de hoy, muchas de esas canciones siguen sonando en fiestas, discotecas, redes sociales y playlists. Eso demuestra que no se trata solo de nostalgia, sino de una música que sigue conectando con las personas.</p>
+          <p>Back Street 2000 no es solo un evento musical. Es una experiencia que combina música en directo, estética retro, espacios temáticos e interacción con el público. El objetivo es que los asistentes no solo escuchen música, sino que revivan una etapa de su vida.</p>
+          <p>Workshop SEO Edition 2025 — Proyecto académico de posicionamiento web.</p>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-block"><div class="stat-num">2000</div><div class="stat-label">ERA MUSICAL</div></div>
+        <div class="stat-block"><div class="stat-num">30+</div><div class="stat-label">ARTISTAS</div></div>
+        <div class="stat-block"><div class="stat-num">BCN</div><div class="stat-label">BARCELONA</div></div>
+        <div class="stat-block"><div class="stat-num">5★</div><div class="stat-label">EXPERIENCIA</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: FAQ ============ -->
+<div id="page-faq" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">13 / FAQ</div>
+      <div class="section-title">FAQ</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">Para que la experiencia en Back Street 2000 Festival sea lo más cómoda posible, hemos recopilado las preguntas más frecuentes. Si no encuentras respuesta a tu pregunta, contacta con nosotros a través del formulario.</p>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Dónde puedo comprar las entradas? <span class="faq-arrow">+</span></div><div class="faq-a">Las entradas están disponibles a través de la web oficial del festival. Se recomienda comprarlas con antelación, ya que el aforo es limitado. El festival agota sus accesos con rapidez cada edición.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Qué tipos de entrada hay disponibles? <span class="faq-arrow">+</span></div><div class="faq-a">Existen diferentes modalidades: entrada general de día, abono completo con ventajas adicionales y acceso VIP con servicios exclusivos. Elige la que mejor se adapta a tu perfil y disfruta de la experiencia.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿A qué hora se abren las puertas? <span class="faq-arrow">+</span></div><div class="faq-a">El horario de apertura se indicará previamente en la web oficial y redes sociales del festival. Consulta los canales oficiales para estar al día de todas las novedades.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Se puede acceder con comida o bebida del exterior? <span class="faq-arrow">+</span></div><div class="faq-a">No, salvo excepciones indicadas por la organización. Está permitido llevar agua en botella de plástico sellada. No se permiten bebidas alcohólicas ni cristal. El festival dispone de amplia oferta gastronómica dentro del recinto.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Hay lockers disponibles? <span class="faq-arrow">+</span></div><div class="faq-a">Sí, el festival cuenta con servicio de taquillas en tres tamaños (S, M, L) para guardar mochilas, chaquetas, cámaras y objetos personales. Están claramente señalizados dentro del recinto y con acceso ilimitado durante el evento.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Cómo llegar al festival? <span class="faq-arrow">+</span></div><div class="faq-a">El festival habilita servicios de transporte especial desde los principales puntos de la ciudad, incluyendo autobuses lanzadera y coordinación con el transporte público local. También puedes llegar en vehículo privado o taxi/VTC.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿El festival es seguro? <span class="faq-arrow">+</span></div><div class="faq-a">Sí, el recinto cuenta con medidas de seguridad y personal especializado durante todo el evento. Hay puntos médicos distribuidos por el recinto. Para cualquier duda adicional, puedes contactar a través del apartado de Contacto.</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: CONTACTO ============ -->
+<div id="page-contacto" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">14 / CONTACTO</div>
+      <div class="section-title">CONTACTO</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form">
+        <div style="font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:0.3em;color:rgba(255,255,255,0.4);margin-bottom:28px">ENVÍANOS UN MENSAJE</div>
+        <div class="form-group"><label class="form-label">NOMBRE</label><input type="text" class="form-input" placeholder="Tu nombre"></div>
+        <div class="form-group"><label class="form-label">EMAIL</label><input type="email" class="form-input" placeholder="tu@email.com"></div>
+        <div class="form-group"><label class="form-label">ASUNTO</label><input type="text" class="form-input" placeholder="¿En qué podemos ayudarte?"></div>
+        <div class="form-group"><label class="form-label">MENSAJE</label><textarea class="form-textarea" placeholder="Escribe tu mensaje aquí..."></textarea></div>
+        <button class="btn-submit">ENVIAR MENSAJE →</button>
+      </div>
+      <div class="contact-info">
+        <div style="font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:0.3em;color:rgba(255,255,255,0.4);margin-bottom:28px">DATOS DE CONTACTO</div>
+        <div class="contact-detail"><div class="contact-detail-label">EMAIL GENERAL</div><div class="contact-detail-value">info@backstreet2000festival.com</div></div>
+        <div class="contact-detail"><div class="contact-detail-label">PRENSA Y MEDIOS</div><div class="contact-detail-value">prensa@backstreet2000festival.com</div></div>
+        <div class="contact-detail"><div class="contact-detail-label">ACREDITACIONES</div><div class="contact-detail-value">acreditaciones@backstreet2000festival.com</div></div>
+        <div class="contact-detail"><div class="contact-detail-label">PATROCINIOS</div><div class="contact-detail-value">sponsors@backstreet2000festival.com</div></div>
+        <div class="contact-detail"><div class="contact-detail-label">REDES SOCIALES</div>
+          <div class="contact-detail-value" style="display:flex;gap:12px;margin-top:6px">
+            <span style="font-family:'Orbitron',sans-serif;font-size:10px;padding:5px 12px;border:1px solid rgba(0,255,255,0.3);color:var(--neon-cyan);letter-spacing:0.1em;cursor:pointer">IG</span>
+            <span style="font-family:'Orbitron',sans-serif;font-size:10px;padding:5px 12px;border:1px solid rgba(255,0,128,0.3);color:var(--neon-pink);letter-spacing:0.1em;cursor:pointer">TT</span>
+            <span style="font-family:'Orbitron',sans-serif;font-size:10px;padding:5px 12px;border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);letter-spacing:0.1em;cursor:pointer">YT</span>
+            <span style="font-family:'Orbitron',sans-serif;font-size:10px;padding:5px 12px;border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);letter-spacing:0.1em;cursor:pointer">SP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: BLOG LIST ============ -->
+<div id="page-blog" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-num">09 / BLOG</div>
+      <div class="section-title">BLOG</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">El blog de Back Street 2000 Festival: artículos sobre artistas emergentes del concert music festival, tips para disfrutar al máximo, guías de viaje, zonas del recinto, gastronomía y todo lo que necesitas saber para vivir la mejor experiencia en el festival de los 2000.</p>
+    <div class="blog-grid">
+      <div class="blog-card featured" onclick="showPost('post1')">
+        <div class="blog-tag">★ DESTACADO · ARTISTAS</div>
+        <div class="blog-title">Artistas emergentes del concert music festival: nuevas promesas que marcarán este 2026</div>
+        <div class="blog-excerpt">Los artistas emergentes del Concert Music Festival han ganado gran protagonismo, atrayendo especialmente al público joven. Aportan frescura con sonidos innovadores y propuestas diferentes, enriqueciendo el cartel.</div>
+        <div class="blog-meta">KEYWORD: ARTISTAS EMERGENTES CONCERT MUSIC FESTIVAL</div>
+        <div class="blog-read-more">LEER MÁS →</div>
+      </div>
+      <div class="blog-card" onclick="showPost('post2')">
+        <div class="blog-tag">GUÍA · SUPERVIVENCIA</div>
+        <div class="blog-title">Tips para sobrevivir a un concert music festival de todo el día</div>
+        <div class="blog-excerpt">Ropa cómoda, batería externa, hidratación constante y planificación previa. Todo lo que necesitas para aguantar de principio a fin.</div>
+        <div class="blog-meta">KEYWORD: TIPS CONCERT MUSIC FESTIVAL</div>
+        <div class="blog-read-more">LEER MÁS →</div>
+      </div>
+      <div class="blog-card" onclick="showPost('post3')">
+        <div class="blog-tag">EXPERIENCIA · MOMENTOS</div>
+        <div class="blog-title">Los mejores momentos que vivirás en un concert music festival este verano</div>
+        <div class="blog-excerpt">Desde la llegada al recinto hasta el espectáculo final de luces, descubre los instantes que quedarán grabados en tu memoria para siempre.</div>
+        <div class="blog-meta">KEYWORD: MEJORES MOMENTOS CONCERT MUSIC FESTIVAL</div>
+        <div class="blog-read-more">LEER MÁS →</div>
+      </div>
+      <div class="blog-card" onclick="showPost('post4')">
+        <div class="blog-tag">VIAJE · ORGANIZACIÓN</div>
+        <div class="blog-title">Cómo organizar tu viaje a un concert music festival paso a paso</div>
+        <div class="blog-excerpt">Desde la compra de entradas hasta el alojamiento y el equipaje. Una guía completa para no improvisar nada y disfrutar al máximo.</div>
+        <div class="blog-meta">KEYWORD: ORGANIZAR VIAJE CONCERT MUSIC FESTIVAL</div>
+        <div class="blog-read-more">LEER MÁS →</div>
+      </div>
+      <div class="blog-card" onclick="showPost('post5')">
+        <div class="blog-tag">RECINTO · ESPACIOS</div>
+        <div class="blog-title">Zonas y espacios de un concert music festival: todo lo que debes conocer</div>
+        <div class="blog-excerpt">Escenarios, zonas chill, áreas VIP, restauración y servicios. Conoce todos los espacios del recinto para moverte con facilidad.</div>
+        <div class="blog-meta">KEYWORD: ZONAS CONCERT MUSIC FESTIVAL</div>
+        <div class="blog-read-more">LEER MÁS →</div>
+      </div>
+      <div class="blog-card" onclick="showPost('post6')">
+        <div class="blog-tag">GASTRONOMÍA</div>
+        <div class="blog-title">Comida en un concert music festival: qué comer para disfrutar al máximo</div>
+        <div class="blog-excerpt">Opciones ligeras de día, más contundentes de noche, vegetarianas, veganas y cómo gestionar el presupuesto gastronómico del festival.</div>
+        <div class="blog-meta">KEYWORD: COMIDA CONCERT MUSIC FESTIVAL</div>
+        <div class="blog-read-more">LEER MÁS →</div>
+      </div>
+      <div class="blog-card" onclick="showPost('post7')">
+        <div class="blog-tag">POP &amp; ROCK</div>
+        <div class="blog-title">Concert music festival: la gran fiesta del pop y rock de los 2000 que no puedes perderte</div>
+        <div class="blog-excerpt">Una generación, una banda sonora. El festival que mezcla emoción, nostalgia y espectáculo en un mismo espacio único en Barcelona.</div>
+        <div class="blog-meta">KEYWORD: CONCERT MUSIC FESTIVAL POP Y ROCK</div>
+        <div class="blog-read-more">LEER MÁS →</div>
+      </div>
+      <div class="blog-card" onclick="showPost('post8')">
+        <div class="blog-tag">GUÍA DEFINITIVA</div>
+        <div class="blog-title">Guía definitiva del Concert Music Festival: todo lo que necesitas saber</div>
+        <div class="blog-excerpt">Desde la compra de entradas hasta los consejos para el día del festival. El recurso más completo para preparar tu visita.</div>
+        <div class="blog-meta">KEYWORD: GUÍA DEFINITIVA CONCERT MUSIC FESTIVAL</div>
+        <div class="blog-read-more">LEER MÁS →</div>
+      </div>
+      <div class="blog-card" onclick="showPost('post9')">
+        <div class="blog-tag">CLAVES DEL ÉXITO</div>
+        <div class="blog-title">Por qué el concert music festival es el evento del año: historia y claves de su crecimiento</div>
+        <div class="blog-excerpt">Especialización, curaduría artística, producción de primer nivel y estrategia digital. Las razones del éxito del festival más nostálgico.</div>
+        <div class="blog-meta">KEYWORD: CLAVES ÉXITO CONCERT MUSIC FESTIVAL</div>
+        <div class="blog-read-more">LEER MÁS →</div>
+      </div>
+      <div class="blog-card" onclick="showPost('post10')">
+        <div class="blog-tag">CARTEL ARTÍSTICO</div>
+        <div class="blog-title">La música española de los 2000: David Bisbal, La Oreja de Van Gogh y más en el festival</div>
+        <div class="blog-excerpt">El pop español de los 2000 tiene su espacio en Back Street 2000. Artistas nacionales que marcaron una década y siguen siendo referentes.</div>
+        <div class="blog-meta">POP ESPAÑOL · ARTISTAS NACIONALES</div>
+        <div class="blog-read-more">LEER MÁS →</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ BLOG POSTS (single pages) ============ -->
+<div id="page-post1" class="page">
+  <div class="blog-post">
+    <button class="back-btn" onclick="showPage('blog')">← VOLVER AL BLOG</button>
+    <div class="blog-post-header">
+      <div class="blog-post-meta">ARTISTAS EMERGENTES · CONCERT MUSIC FESTIVAL · 2026</div>
+      <h1>Artistas emergentes del concert music festival: nuevas promesas que marcarán este 2026</h1>
+      <p>En los últimos años, los <strong>artistas emergentes del Concert Music Festival</strong> han ganado gran protagonismo, atrayendo especialmente al público joven. Aportan frescura con sonidos innovadores y propuestas diferentes, enriqueciendo el cartel y ayudando a posicionar el festival como un escaparate clave para el talento musical del futuro.</p>
+    </div>
+    <div class="blog-post-img">🎤</div>
+    <p>El Concert Music Festival se ha consolidado como uno de los eventos musicales más importantes del verano en España, reuniendo cada edición a grandes artistas internacionales y dando visibilidad a nuevas promesas. Los <strong>artistas emergentes del festival</strong> se han convertido en una parte esencial de su crecimiento, aportando frescura, innovación y nuevas formas de entender la música en directo.</p>
+    <p>Este 2026, estos talentos tendrán aún más protagonismo, ofreciendo propuestas arriesgadas y estilos innovadores que enriquecerán la experiencia del público y consolidarán al festival como un referente cultural en el panorama musical español e internacional.</p>
+    <h2>El papel de los artistas emergentes del concert music festival</h2>
+    <p>Los festivales modernos ya no solo se centran en grandes estrellas. Ahora, los <strong>artistas emergentes del concert music festival</strong> son fundamentales para aportar frescura, diversidad y nuevas tendencias al cartel, además de conectar con nuevas generaciones de oyentes que buscan descubrir sonidos diferentes.</p>
+    <h3>Por qué los nuevos talentos son importantes</h3>
+    <p>Los artistas emergentes del concert music festival representan el futuro de la industria musical y ayudan a renovar cada edición del festival con propuestas más actuales, frescas, auténticas y en constante evolución, aportando identidad propia al evento.</p>
+    <h4>Impacto en la evolución del festival</h4>
+    <p>Su presencia permite que el festival evolucione, conecte con nuevas audiencias, amplíe su propuesta artística y mantenga su relevancia dentro de la industria musical global, consolidándose como un espacio clave para el talento emergente.</p>
+    <h2>Claves del éxito de los artistas emergentes</h2>
+    <p>Los artistas emergentes del concert music festival destacan por varios factores: innovación musical y fusión de géneros, conexión directa con el público, presencia fuerte en redes sociales, capacidad de viralización y una identidad artística propia que los diferencia del resto.</p>
+    <h3>Tendencias musicales en 2026</h3>
+    <ul>
+      <li>Pop urbano con fusiones latinas</li>
+      <li>Electrónica emocional con matices indie</li>
+      <li>Indie experimental con sonidos alternativos</li>
+      <li>Fusión de géneros globales sin etiquetas rígidas</li>
+      <li>Influencias afrobeat y sonidos urbanos modernos</li>
+    </ul>
+    <h2>Impacto en la industria musical</h2>
+    <p>Los <strong>artistas emergentes del concert music festival</strong> no solo brillan en el escenario, también generan un impacto directo en la industria musical. Actuar en el festival les permite ganar visibilidad mediática, acceder a colaboraciones con artistas consolidados, crecer en plataformas de streaming y expandirse internacionalmente.</p>
+    <h2>Experiencia del público en el festival</h2>
+    <p>Para el público, los artistas emergentes del concert music festival aportan frescura, sorpresa y energía en cada actuación, convirtiéndose muchas veces en descubrimientos inesperados que transforman la experiencia del festival en algo único e irrepetible.</p>
+    <h3>Recomendaciones para el público</h3>
+    <ul>
+      <li>Seguir a los artistas emergentes del concert music festival en redes sociales</li>
+      <li>Explorar nuevos escenarios sin prejuicios ni expectativas</li>
+      <li>Asistir a conciertos de artistas desconocidos para descubrir talento</li>
+    </ul>
+    <p>Muchos de los grandes nombres del futuro nacen en espacios como este festival, donde los artistas emergentes del concert music festival tienen la oportunidad de crecer, experimentar y conectar con nuevas audiencias de forma directa y auténtica.</p>
+  </div>
+</div>
+
+<div id="page-post2" class="page">
+  <div class="blog-post">
+    <button class="back-btn" onclick="showPage('blog')">← VOLVER AL BLOG</button>
+    <div class="blog-post-header">
+      <div class="blog-post-meta">TIPS · CONCERT MUSIC FESTIVAL · GUÍA</div>
+      <h1>Los mejores tips para sobrevivir a un concert music festival de todo el día</h1>
+      <p>Vivir un festival de música durante todo el día es una experiencia única, llena de energía y conciertos inolvidables. Sin embargo, para disfrutarlo al máximo es necesario algo más que ganas: hace falta organización. Por eso, estos <strong>tips concert music festival</strong> te ayudarán a prepararte mejor y aprovechar cada momento del evento.</p>
+    </div>
+    <div class="blog-post-img">🎪</div>
+    <h2>Preparación antes del festival</h2>
+    <p>Antes de llegar al recinto, es importante planificar bien el día. Los <strong>tips concert music festival</strong> comienzan mucho antes de que suene la primera canción. Una buena preparación marca la diferencia.</p>
+    <h3>Qué debes preparar</h3>
+    <ul>
+      <li>Ropa cómoda y ligera adaptada al clima</li>
+      <li>Protector solar para todo el día</li>
+      <li>Botella reutilizable de agua</li>
+      <li>Batería externa para el móvil</li>
+      <li>Mochila ligera con lo esencial</li>
+    </ul>
+    <h2>Gestión de energía durante todo el día</h2>
+    <p>Uno de los mayores retos de un festival largo es mantener la energía. Los tips concert music festival son clave para aguantar hasta el final. Hacer pausas entre conciertos ayuda a recuperar energía y evitar el agotamiento. Una alimentación equilibrada también es fundamental: opta por comidas ligeras, snacks o frutas para mantener el nivel de energía constante.</p>
+    <h2>Organización del horario</h2>
+    <p>En un festival hay muchos artistas actuando al mismo tiempo. Por eso, los tips concert music festival de organización son fundamentales. Planificar qué artistas ver optimiza el tiempo y evita desplazamientos innecesarios, dejando espacio para descubrir nuevos talentos.</p>
+    <h2>Hidratación constante</h2>
+    <p>Mantenerse hidratado es fundamental. Beber agua de forma constante ayuda a mantener la energía, mejorar la concentración y prevenir mareos. La hidratación es uno de los pilares básicos dentro de los <strong>tips concert music festival</strong>. Evita el consumo excesivo de alcohol o bebidas azucaradas.</p>
+    <h2>Seguridad y control</h2>
+    <p>Llevar solo lo necesario y mantener tus objetos bien guardados reduce el riesgo de pérdida o robo. Es uno de los tips concert music festival más prácticos. Seguir las normas del evento y respetar al resto de asistentes garantiza una experiencia positiva para todos.</p>
+    <h2>Experiencia social y disfrute</h2>
+    <p>Acordar puntos de encuentro y mantenerse en contacto con amigos mejora la organización y evita pérdidas dentro del recinto. Y recuerda: reducir el uso del móvil permite disfrutar más del ambiente, la música y la conexión con el público.</p>
+  </div>
+</div>
+
+<div id="page-post3" class="page">
+  <div class="blog-post">
+    <button class="back-btn" onclick="showPage('blog')">← VOLVER AL BLOG</button>
+    <div class="blog-post-header">
+      <div class="blog-post-meta">MOMENTOS · CONCERT MUSIC FESTIVAL · EXPERIENCIA</div>
+      <h1>Los mejores momentos que vivirás en un concert music festival este verano</h1>
+      <p>Los festivales de música se han convertido en una de las experiencias más esperadas del verano. Hablar de los <strong>mejores momentos concert music festival</strong> es hablar de instantes únicos que quedan grabados en la memoria. Desde la llegada al recinto hasta el espectáculo final de luces.</p>
+    </div>
+    <div class="blog-post-img">✨</div>
+    <h2>El inicio del festival y la emoción del primer contacto</h2>
+    <p>El comienzo del festival marca el inicio de toda la experiencia. La emoción crece a medida que los asistentes se acercan al recinto, y ese ambiente previo ya forma parte de los mejores momentos del concert music festival. Las colas, los grupos de amigos, las primeras bebidas y la música lejana crean una atmósfera única.</p>
+    <p>Al cruzar la entrada, el impacto visual es inmediato. Escenarios gigantes, luces LED, pantallas y sonido envolvente crean un entorno inmersivo que no olvidarás.</p>
+    <h2>Los conciertos principales y la energía del escenario</h2>
+    <p>Los conciertos son el núcleo del festival. Los artistas principales ofrecen espectáculos completos que combinan música, visuales y efectos especiales. Estos shows representan los <strong>mejores momentos concert music festival</strong> más esperados por el público.</p>
+    <h3>Colaboraciones inesperadas</h3>
+    <p>Las colaboraciones sorpresa entre artistas generan algunos de los momentos más emocionantes e irrepetibles del festival. Estos instantes suelen ser inesperados y provocan reacciones únicas del público.</p>
+    <h2>La conexión entre el público y la música</h2>
+    <p>Miles de personas cantando, saltando y disfrutando al mismo ritmo generan una atmósfera irrepetible. Este tipo de conexión emocional convierte canciones normales en recuerdos duraderos que definen el evento.</p>
+    <h2>La experiencia más allá de la música</h2>
+    <p>Los food trucks, áreas chill y espacios de descanso también forman parte de los mejores momentos. Descubrir nuevos sabores o simplemente relajarse con amigos se convierte en uno de los grandes placeres del día. Y uno de los aspectos más especiales es la posibilidad de conocer gente nueva.</p>
+    <h2>El cierre del festival y la despedida emocional</h2>
+    <p>Las últimas actuaciones suelen ser las más intensas emocionalmente, ya que el público sabe que el evento está terminando. El cierre con luces y música crea un final espectacular que resume todos los mejores momentos del festival, dejando una sensación de nostalgia y felicidad.</p>
+    <h3>Para vivir el festival al máximo</h3>
+    <ul>
+      <li>Planificar horarios y artistas con antelación</li>
+      <li>Mantenerse hidratado y descansar adecuadamente</li>
+      <li>Reducir el uso del móvil para vivir el presente</li>
+    </ul>
+  </div>
+</div>
+
+<div id="page-post4" class="page">
+  <div class="blog-post">
+    <button class="back-btn" onclick="showPage('blog')">← VOLVER AL BLOG</button>
+    <div class="blog-post-header">
+      <div class="blog-post-meta">VIAJE · ORGANIZACIÓN · CONCERT MUSIC FESTIVAL</div>
+      <h1>Cómo organizar tu viaje a un concert music festival paso a paso</h1>
+      <p>Asistir a un festival es una de las experiencias más emocionantes del verano, pero para disfrutarlo al máximo es clave <strong>organizar viaje concert music festival</strong> con antelación. No se trata solo de comprar entradas, sino de planificar cada detalle para evitar imprevistos.</p>
+    </div>
+    <div class="blog-post-img">🗺️</div>
+    <h2>Planificación previa para organizar viaje concert music festival</h2>
+    <p>Organizar viaje concert music festival empieza mucho antes del propio festival. El primer paso es elegir el festival adecuado según tus gustos musicales, presupuesto y ubicación. Una vez decidido, es importante comprar las entradas con antelación.</p>
+    <h3>Tipos de entradas disponibles</h3>
+    <ul>
+      <li>Entrada general</li>
+      <li>Entrada VIP</li>
+      <li>Abonos de varios días</li>
+      <li>Accesos con servicios incluidos</li>
+    </ul>
+    <h2>Transporte y alojamiento</h2>
+    <p>Uno de los aspectos más importantes al organizar viaje concert music festival es decidir cómo llegar y dónde alojarte. Puedes optar por coche propio o compartido, tren o autobús, o avión si el festival es en otra ciudad. En cuanto al alojamiento, considera camping dentro del festival, hoteles cercanos, apartamentos turísticos u hostales económicos.</p>
+    <h2>Qué llevar</h2>
+    <ul>
+      <li>Documentación y entradas</li>
+      <li>Ropa cómoda y adecuada al clima</li>
+      <li>Protección solar</li>
+      <li>Batería externa (power bank)</li>
+      <li>Botella reutilizable</li>
+    </ul>
+    <p>Una mochila ligera y bien organizada facilita mucho organizar viaje concert music festival y moverte con comodidad dentro del recinto. Lleva solo lo imprescindible.</p>
+    <h2>Organización del tiempo dentro del festival</h2>
+    <p>Antes de llegar, revisa el cartel y organiza los conciertos que quieres ver. Identifica a tus artistas favoritos, revisa los horarios y planifica los desplazamientos entre escenarios. No todo es música: también es importante descansar, hidratarse y buscar zonas de sombra o relax.</p>
+    <h2>Presupuesto</h2>
+    <p>Gestionar bien el dinero es fundamental. Incluye en tu planificación: entrada al festival, transporte, alojamiento, comida y bebida, y merchandising. Compra entradas anticipadas, comparte gastos de transporte y elige alojamientos económicos para optimizar tu presupuesto.</p>
+  </div>
+</div>
+
+<div id="page-post5" class="page">
+  <div class="blog-post">
+    <button class="back-btn" onclick="showPage('blog')">← VOLVER AL BLOG</button>
+    <div class="blog-post-header">
+      <div class="blog-post-meta">ZONAS · ESPACIOS · CONCERT MUSIC FESTIVAL</div>
+      <h1>Zonas y espacios de un concert music festival: todo lo que debes conocer</h1>
+      <p>Asistir a un festival implica mucho más que ver conciertos. Conocer bien las <strong>zonas concert music festival</strong> es clave para moverte con facilidad, aprovechar todos los servicios y disfrutar al máximo de cada momento dentro del recinto.</p>
+    </div>
+    <div class="blog-post-img">🗺️</div>
+    <h2>Tipos de zonas en el recinto</h2>
+    <p>Cada festival cuenta con una organización específica, pero la mayoría comparte una estructura similar. Las <strong>zonas concert music festival</strong> se dividen en diferentes espacios diseñados para mejorar la comodidad y el flujo de asistentes.</p>
+    <h3>Escenarios principales</h3>
+    <p>Los escenarios son el corazón de las zonas del festival. Suelen existir varios escenarios con diferentes tamaños: escenario principal con los artistas más destacados, escenarios secundarios con propuestas alternativas y espacios más pequeños para artistas emergentes.</p>
+    <h2>Zonas de restauración</h2>
+    <p>La comida y la bebida son una parte esencial de la experiencia. Las zonas concert music festival incluyen food trucks con propuestas rápidas, restaurantes temporales, opciones vegetarianas y saludables, y bebidas y barras. Están ubicadas estratégicamente para evitar aglomeraciones.</p>
+    <h2>Zonas de descanso y relax</h2>
+    <p>Las zonas de descanso cuentan con áreas chill out donde puedes sentarte, relajarte y recuperar energía entre conciertos. Disponer de estas zonas mejora la experiencia del usuario, equilibrando la intensidad del evento con momentos de pausa necesarios.</p>
+    <h2>Zonas VIP y experiencias exclusivas</h2>
+    <ul>
+      <li>Acceso preferente a escenarios</li>
+      <li>Áreas privadas con mayor comodidad</li>
+      <li>Servicios exclusivos de comida y bebida</li>
+      <li>Mejores vistas de los conciertos</li>
+    </ul>
+    <h2>Zonas de servicios</h2>
+    <p>Para garantizar una experiencia completa, las zonas concert music festival incluyen: baños, puntos de información, taquillas o lockers, puntos de recarga de móviles, equipos de seguridad, puntos médicos y personal de asistencia.</p>
+    <h2>Cómo moverte entre zonas</h2>
+    <p>Revisa el mapa del recinto, identifica accesos principales y planifica rutas entre escenarios. Evita las horas punta, utiliza accesos alternativos y llega con antelación a los conciertos para disfrutar sin estrés.</p>
+  </div>
+</div>
+
+<div id="page-post6" class="page">
+  <div class="blog-post">
+    <button class="back-btn" onclick="showPage('blog')">← VOLVER AL BLOG</button>
+    <div class="blog-post-header">
+      <div class="blog-post-meta">GASTRONOMÍA · COMIDA · CONCERT MUSIC FESTIVAL</div>
+      <h1>Comida en un concert music festival: qué comer para disfrutar al máximo</h1>
+      <p>La experiencia de un festival no solo se vive a través de la música, también pasa por la gastronomía. Elegir bien la <strong>comida concert music festival</strong> es clave para mantener la energía y disfrutar de cada momento sin que el cansancio te pase factura.</p>
+    </div>
+    <div class="blog-post-img">🍕</div>
+    <h2>Tipos de comida que puedes encontrar</h2>
+    <p>Los festivales han evolucionado mucho en los últimos años, y la oferta gastronómica es cada vez más amplia. La comida concert music festival ya no se limita a opciones básicas, sino que incluye propuestas variadas, creativas y adaptadas a todo tipo de público.</p>
+    <h3>Opciones más comunes</h3>
+    <ul>
+      <li>Food trucks con comida rápida</li>
+      <li>Hamburguesas, pizzas y bocadillos</li>
+      <li>Opciones internacionales como tacos, noodles o kebab</li>
+      <li>Snacks y platos fáciles de consumir</li>
+    </ul>
+    <h3>Tendencias actuales</h3>
+    <ul>
+      <li>Opciones vegetarianas y veganas</li>
+      <li>Platos saludables y equilibrados</li>
+      <li>Ingredientes ecológicos o de proximidad</li>
+    </ul>
+    <h2>Cómo elegir la mejor comida según el momento</h2>
+    <p>Durante el día: platos ligeros y frescos, ensaladas, wraps o bowls, snacks saludables como fruta o frutos secos. Estas opciones permiten disfrutar del evento sin sensación de pesadez. Por la noche: hamburguesas, pizzas o platos calientes para recuperar energía y seguir disfrutando hasta el final.</p>
+    <h2>Hidratación</h2>
+    <p>Agua, bebidas isotónicas y refrescos son las mejores opciones. Combinar correctamente la comida concert music festival con una hidratación adecuada es clave para mantener el bienestar durante todo el evento.</p>
+    <h2>Organización y presupuesto</h2>
+    <p>Come en horarios estratégicos y evita las horas punta en zonas de restauración para optimizar tu tiempo. Establece un presupuesto previo, prioriza comidas principales y evita compras impulsivas. La gastronomía también forma parte del ambiente del festival: descubre nuevos sabores y completa una experiencia única.</p>
+  </div>
+</div>
+
+<div id="page-post7" class="page">
+  <div class="blog-post">
+    <button class="back-btn" onclick="showPage('blog')">← VOLVER AL BLOG</button>
+    <div class="blog-post-header">
+      <div class="blog-post-meta">POP Y ROCK · CONCERT MUSIC FESTIVAL · 2000</div>
+      <h1>Concert music festival: la gran fiesta del pop y rock de los 2000 que no puedes perderte</h1>
+      <p>El verano tiene un nuevo protagonista: el <strong>concert music festival pop y rock de los 2000</strong>. Este evento se ha convertido en una referencia absoluta para quienes crecieron con auriculares enredados y canciones inolvidables, mezclando emoción, nostalgia y espectáculo en un mismo espacio.</p>
+    </div>
+    <div class="blog-post-img">🎸</div>
+    <h2>¿Qué es y por qué todo el mundo habla de este festival?</h2>
+    <p>El concert music festival pop y rock destaca por ofrecer algo más que música en directo. Es una recreación cuidada de toda una época, donde cada detalle está pensado para transportar al público. Desde la estética hasta el sonido, consigue activar recuerdos que parecían dormidos.</p>
+    <h2>Una generación, una banda sonora</h2>
+    <p>En el concert music festival pop y rock conviven estilos que marcaron una era: pop, rock alternativo, R&amp;B y electrónica. Todo en un mismo lugar, todo en perfecta armonía. Cada edición se convierte en un punto de encuentro para miles de personas que comparten recuerdos similares.</p>
+    <h2>El cartel artístico: nombres que marcaron una época</h2>
+    <p>El festival reúne a figuras que definieron una generación: Backstreet Boys, Britney Spears, Rihanna, Shakira, Justin Timberlake y muchos más. Asistir a este festival inspirado en los 2000 es reencontrarse con esas voces que acompañaron momentos importantes de la vida.</p>
+    <h3>Actuaciones sorpresa y momentos irrepetibles</h3>
+    <p>Uno de los grandes atractivos son sus sorpresas. En cada edición pueden surgir colaboraciones inesperadas que elevan la experiencia a otro nivel. El festival no solo cumple expectativas, las supera constantemente.</p>
+    <h2>Un evento que va más allá de la música</h2>
+    <p>El concert music festival pop y rock es mucho más que un evento musical. También se ha convertido en un punto de encuentro cultural donde distintas generaciones comparten escenario emocional. Cada edición refuerza esa sensación de comunidad, como si durante unos días el tiempo se doblara y todos compartieran la misma banda sonora invisible.</p>
+    <h2>El cierre: cuando la música se queda contigo</h2>
+    <p>El concert music festival pop y rock deja huella en todos los que lo viven. No termina cuando se apagan las luces: continúa en los recuerdos, en las canciones y en cada emoción revivida. Lo que queda no es solo una lista de canciones, sino una sensación difícil de encerrar en palabras.</p>
+  </div>
+</div>
+
+<div id="page-post8" class="page">
+  <div class="blog-post">
+    <button class="back-btn" onclick="showPage('blog')">← VOLVER AL BLOG</button>
+    <div class="blog-post-header">
+      <div class="blog-post-meta">GUÍA DEFINITIVA · CONCERT MUSIC FESTIVAL</div>
+      <h1>Guía definitiva del Concert Music Festival: todo lo que necesitas saber para vivir la experiencia al máximo</h1>
+      <p>Esta es la <strong>guía definitiva del Concert Music Festival</strong>, el recurso más completo que encontrarás para preparar tu visita, entender qué esperar y no perderte nada de lo que este evento tiene para ofrecerte. Desde la compra de entradas hasta los consejos para el día del festival.</p>
+    </div>
+    <div class="blog-post-img">📖</div>
+    <h2>Qué es el Concert Music Festival y por qué es único</h2>
+    <p>No se trata de un festival más en el calendario estival: es la única propuesta dedicada íntegramente a celebrar la música de los años 2000, con un cuidado artístico y una producción que lo convierten en referente del sector.</p>
+    <h2>Antes del festival: preparación y logística</h2>
+    <h3>Cómo y cuándo comprar las entradas</h3>
+    <p>El primer consejo de esta guía definitiva del Concert Music Festival es el más urgente: no esperes para comprar tus entradas. El festival agota sus accesos con rapidez cada edición, especialmente las modalidades VIP y los abonos de varios días.</p>
+    <h3>Cómo llegar al recinto</h3>
+    <p>El festival habilita servicios de transporte especial desde los principales puntos de la ciudad, incluyendo autobuses lanzadera y coordinación con el transporte público local.</p>
+    <h2>Durante el festival: cómo organizarte</h2>
+    <h3>Planifica tu agenda</h3>
+    <p>Descarga la aplicación oficial del festival antes de llegar: en ella encontrarás el horario completo de actuaciones, el mapa del recinto y notificaciones en tiempo real sobre cambios de última hora. Planifica con márgenes realistas: los desplazamientos entre escenarios y las colas necesitan tiempo.</p>
+    <h3>Qué llevar el día del festival</h3>
+    <ul>
+      <li>Ropa cómoda adaptada a las condiciones climáticas</li>
+      <li>Calzado con el que puedas pasar muchas horas de pie</li>
+      <li>Protección solar para las jornadas diurnas</li>
+      <li>Una batería externa para el móvil</li>
+      <li>La entrada descargada con antelación</li>
+    </ul>
+    <h2>Los escenarios del festival</h2>
+    <p>El escenario principal cuenta con capacidad para decenas de miles de personas, pantallas LED de alta resolución, sistemas de sonido lineal de gran potencia y efectos visuales de primer nivel. El escenario alternativo acoge a artistas de culto, sesiones especiales de DJs y actuaciones sorpresa.</p>
+    <h2>Servicios y zonas del recinto</h2>
+    <p>El recinto cuenta con una amplia oferta gastronómica con propuestas para todos los gustos, puntos de hidratación gratuita distribuidos estratégicamente y zonas de descanso donde recuperar energía entre concierto y concierto.</p>
+    <h2>Después del festival</h2>
+    <p>La guía definitiva del Concert Music Festival no termina cuando se apagan las luces. Las redes sociales del festival permanecen activas con resúmenes de actuaciones, fotos y vídeos que permiten revivir los mejores momentos.</p>
+  </div>
+</div>
+
+<div id="page-post9" class="page">
+  <div class="blog-post">
+    <button class="back-btn" onclick="showPage('blog')">← VOLVER AL BLOG</button>
+    <div class="blog-post-header">
+      <div class="blog-post-meta">CLAVES DEL ÉXITO · CONCERT MUSIC FESTIVAL · HISTORIA</div>
+      <h1>Por qué el concert music festival es el evento del año: historia, éxito y claves de su crecimiento digital</h1>
+      <p>Analizar las <strong>claves del éxito del Concert Music Festival</strong> es entender cómo una propuesta temática bien ejecutada puede superar a generalistas con mucho más presupuesto. Un caso de estudio para la industria del entretenimiento en vivo.</p>
+    </div>
+    <div class="blog-post-img">🏆</div>
+    <h2>Especialización: la primera y más importante clave</h2>
+    <p>En un mercado saturado, la especialización es la herramienta de diferenciación más poderosa. Una de las principales <strong>claves del éxito del Concert Music Festival</strong> es haber renunciado a ser un festival para todos para convertirse en el festival definitivo de los 2000. La nostalgia millennial no es una tendencia pasajera, sino un motor cultural sostenido.</p>
+    <h2>Curaduría artística de alto nivel</h2>
+    <p>El equipo de programación construye el cartel no solo mirando cifras de streaming, sino también la dimensión narrativa de cada artista y lo que representa para la audiencia. Esta visión es una de las claves del éxito que más cuesta replicar.</p>
+    <h3>Diversidad de géneros dentro de una misma era</h3>
+    <p>El festival no se limita al pop mainstream, sino que abarca todo tipo de música de los 2000: pop, rock, R&amp;B, dance, electrónica y pop español. Esta amplitud atrae a un público diverso sin perder la coherencia temática.</p>
+    <h2>La experiencia del asistente como producto central</h2>
+    <p>Las claves del éxito del Concert Music Festival no se limitan al escenario. La experiencia del asistente fuera de los conciertos es igualmente decisiva: señalización clara, tiempos de espera controlados, oferta gastronómica cuidada, espacios temáticos que evocan la estética de los 2000.</p>
+    <h2>Estrategia digital: construir comunidad todo el año</h2>
+    <p>El festival mantiene una presencia activa y relevante en redes sociales los 365 días del año. Un contenido de blog trabajado con keywords como "artistas emergentes concert music festival" o "tips concert music festival" construye autoridad digital que se traduce en tráfico cualificado.</p>
+    <h3>SEO y visibilidad orgánica</h3>
+    <p>El posicionamiento en buscadores, con comunicados de prensa distribuidos estratégicamente y colaboraciones con medios especializados, construye una autoridad digital que se traduce en ventas directas de entradas sin depender exclusivamente de la publicidad de pago.</p>
+    <h2>Visión a largo plazo: innovar sin perder la esencia</h2>
+    <p>La última clave del éxito es quizás la más difícil de mantener: la capacidad de innovar sin traicionar la identidad que ha construido su éxito. Cada nueva edición incorpora mejoras, pero siempre dentro de un marco coherente que el público reconoce y aprecia.</p>
+  </div>
+</div>
+
+<div id="page-post10" class="page">
+  <div class="blog-post">
+    <button class="back-btn" onclick="showPage('blog')">← VOLVER AL BLOG</button>
+    <div class="blog-post-header">
+      <div class="blog-post-meta">POP ESPAÑOL · ARTISTAS NACIONALES · FESTIVAL 2000</div>
+      <h1>La música española de los 2000: David Bisbal, La Oreja de Van Gogh y más en el festival</h1>
+      <p>El festival también dedica una parte esencial de su cartel a los artistas nacionales que fueron protagonistas de la música española durante los años 2000. Una década en la que el pop español vivió uno de sus momentos más brillantes, con artistas que siguen siendo referentes hoy en día.</p>
+    </div>
+    <div class="blog-post-img">🇪🇸</div>
+    <h2>El pop español que marcó una generación</h2>
+    <p>Los años 2000 fueron una época dorada para la música española. Operación Triunfo lanzó a varios artistas al estrellato, las radios sonaban con grupos de pop-rock y la escena musical nacional vivía un momento de efervescencia creativa sin precedentes.</p>
+    <h2>David Bisbal: el fenómeno de Operación Triunfo</h2>
+    <p>Uno de los nombres más destacados es David Bisbal, que se convirtió en uno de los artistas más populares del pop español tras su aparición en Operación Triunfo. Sus canciones fueron grandes éxitos en España y en muchos países de habla hispana, consolidándolo como uno de los mayores fenómenos musicales de la década.</p>
+    <h2>La Oreja de Van Gogh: letras que emocionan</h2>
+    <p>También forma parte del cartel La Oreja de Van Gogh, un grupo que logró conectar con millones de personas gracias a sus letras emocionales y a su estilo pop característico. Canciones como "El último vals" o "Muévete" forman parte de la memoria colectiva de una generación entera.</p>
+    <h2>El Canto del Loco: el pop-rock que unió a los jóvenes</h2>
+    <p>El Canto del Loco representó el pop rock juvenil que dominó la escena musical española durante muchos años. Su energía en directo y sus melodías pegadizas los convirtieron en uno de los grupos más queridos del panorama nacional de los 2000.</p>
+    <h2>Amaral, Fangoria, Melendi y Chenoa</h2>
+    <p>El cartel también cuenta con Amaral, cuyo estilo mezcla pop y rock con una identidad muy reconocible, o Fangoria, uno de los proyectos musicales más influyentes del pop electrónico español. Melendi aporta el lado más íntimo y cantautor, mientras que Chenoa representa el pop con más garra del momento OT.</p>
+    <h2>Los DJs que pusieron música a la década</h2>
+    <p>Además de los conciertos en directo, el festival cuenta con DJs especializados en sesiones throwback de los 2000: DJ Sammy, Juan Magán, DJ Nano y Brian Cross. Sesiones que mezclan los temas más populares de la década y convierten el festival en una auténtica fiesta colectiva donde el público baila sin parar.</p>
+    <h2>Una experiencia que celebra toda una era musical</h2>
+    <p>Juntos, estos artistas representan la riqueza y diversidad de la música española durante los años 2000. Back Street 2000 Festival es el espacio donde esa música vuelve a sonar, donde miles de personas pueden cantar juntas esas canciones que todos conocen y que forman parte de los mejores recuerdos de una generación.</p>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-logo">BACK STREET 2000</div>
+  <div class="footer-tagline">FESTIVAL · BARCELONA · LA MÚSICA QUE MARCÓ UNA GENERACIÓN</div>
+  <ul class="footer-links">
+    <li><a onclick="showPage('home')">Home</a></li>
+    <li><a onclick="showPage('cartel')">Cartel</a></li>
+    <li><a onclick="showPage('restauracion')">Restauración</a></li>
+    <li><a onclick="showPage('zonas')">Zonas</a></li>
+    <li><a onclick="showPage('lockers')">Lockers</a></li>
+    <li><a onclick="showPage('vip')">Zona VIP</a></li>
+    <li><a onclick="showPage('info')">Info</a></li>
+    <li><a onclick="showPage('blog')">Blog</a></li>
+    <li><a onclick="showPage('llegar')">Cómo Llegar</a></li>
+    <li><a onclick="showPage('about')">About Us</a></li>
+    <li><a onclick="showPage('faq')">FAQ</a></li>
+    <li><a onclick="showPage('contacto')">Contacto</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 BACK STREET 2000 FESTIVAL · WORKSHOP SEO · TODOS LOS DERECHOS RESERVADOS</div>
+</footer>
+
+<script>
+  // Stars
+  const starsEl = document.getElementById('stars');
+  if(starsEl){ for(let i=0;i<100;i++){ const s=document.createElement('div'); s.className='star'; s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*4}s;--delay:${Math.random()*4}s;opacity:${0.1+Math.random()*0.9};width:${Math.random()>0.9?3:Math.random()>0.7?2:1}px;height:${Math.random()>0.9?3:Math.random()>0.7?2:1}px`; starsEl.appendChild(s); } }
+
+  // Page navigation
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + pageId);
+    if(target){ target.classList.add('active'); window.scrollTo(0,0); }
+    document.querySelectorAll('.nav-links > li > a').forEach(a => a.classList.remove('active'));
+    const navEl = document.getElementById('nav-' + pageId);
+    if(navEl) navEl.classList.add('active');
+  }
+
+  function showPost(postId) {
+    showPage(postId);
+  }
+
+  // FAQ
+  function toggleFaq(el){
+    const item=el.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
