@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog – Back Street 2000 Festival</title>
+  <meta name="description" content="Blog del concert music festival. Artistas emergentes, tips, guías, zonas y todo sobre el festival de los 2000.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Back Street 2000 Festival">
+  <link rel="canonical" href="https://backstreet2000festival.com/blog.html">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body><nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">BS 2000 ◆ FESTIVAL</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" class="has-sub">Cartel &amp; Info</a>
+        <ul class="submenu">
+          <li><a href="cartel.html">Cartel / Line Up</a></li>
+          <li><a href="info.html">Información General</a></li>
+          <li><a href="llegar.html">Cómo Llegar</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="has-sub">Servicios</a>
+        <ul class="submenu">
+          <li><a href="restauracion.html">Restauración</a></li>
+          <li><a href="zonas.html">Zonas del Recinto</a></li>
+          <li><a href="lockers.html">Lockers</a></li>
+          <li><a href="vip.html">Zona VIP</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMobileMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div id="blog-list">
+  <section class="page-section">
+    <div class="section-header">
+      <div class="section-num">09 / BLOG</div>
+      <div class="section-title">BLOG</div>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro">Artículos sobre artistas emergentes, tips, guías, zonas y todo sobre el concert music festival de los 2000.</p>
+    <div class="blog-grid">
+    <div class="blog-card featured" onclick="showPost('post1')">
+      <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=600&auto=format&fit=crop&q=70" alt="Artistas emergentes del concert music festival: nuevas promesas que marcarán este 2026" class="blog-img" loading="lazy">
+      <div class="blog-tag">★ DESTACADO · ARTISTAS EMERGENTES</div>
+      <div class="blog-title">Artistas emergentes del concert music festival: nuevas promesas que marcarán este 2026</div>
+      <div class="blog-excerpt">Los artistas emergentes han ganado gran protagonismo, atrayendo al público joven con sonidos innovadores.</div>
+      <div class="blog-meta">KEYWORD: ARTISTAS EMERGENTES CONCERT MUSIC FESTIVAL</div>
+      <div class="blog-read-more">LEER MÁS →</div>
+    </div>
+    <div class="blog-card" onclick="showPost('post2')">
+      <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=600&auto=format&fit=crop&q=70" alt="Los mejores tips para sobrevivir a un concert music festival de todo el día" class="blog-img" loading="lazy">
+      <div class="blog-tag">GUÍA · SUPERVIVENCIA</div>
+      <div class="blog-title">Los mejores tips para sobrevivir a un concert music festival de todo el día</div>
+      <div class="blog-excerpt">Ropa cómoda, batería externa, hidratación constante y planificación previa.</div>
+      <div class="blog-meta">KEYWORD: TIPS CONCERT MUSIC FESTIVAL</div>
+      <div class="blog-read-more">LEER MÁS →</div>
+    </div>
+    <div class="blog-card" onclick="showPost('post3')">
+      <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&auto=format&fit=crop&q=70" alt="Los mejores momentos que vivirás en un concert music festival este verano" class="blog-img" loading="lazy">
+      <div class="blog-tag">EXPERIENCIA · MOMENTOS</div>
+      <div class="blog-title">Los mejores momentos que vivirás en un concert music festival este verano</div>
+      <div class="blog-excerpt">Desde la llegada hasta el espectáculo final. Instantes que quedarán grabados en tu memoria.</div>
+      <div class="blog-meta">KEYWORD: MEJORES MOMENTOS CONCERT MUSIC FESTIVAL</div>
+      <div class="blog-read-more">LEER MÁS →</div>
+    </div>
+    <div class="blog-card" onclick="showPost('post4')">
+      <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&auto=format&fit=crop&q=70" alt="Cómo organizar tu viaje a un concert music festival paso a paso" class="blog-img" loading="lazy">
+      <div class="blog-tag">VIAJE · ORGANIZACIÓN</div>
+      <div class="blog-title">Cómo organizar tu viaje a un concert music festival paso a paso</div>
+      <div class="blog-excerpt">Desde la compra de entradas hasta el alojamiento. Una guía completa.</div>
+      <div class="blog-meta">KEYWORD: ORGANIZAR VIAJE CONCERT MUSIC FESTIVAL</div>
+      <div class="blog-read-more">LEER MÁS →</div>
+    </div>
+    <div class="blog-card" onclick="showPost('post5')">
+      <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=600&auto=format&fit=crop&q=70" alt="Zonas y espacios de un concert music festival: todo lo que debes conocer" class="blog-img" loading="lazy">
+      <div class="blog-tag">RECINTO · ESPACIOS</div>
+      <div class="blog-title">Zonas y espacios de un concert music festival: todo lo que debes conocer</div>
+      <div class="blog-excerpt">Escenarios, zonas chill, VIP, restauración y servicios. Conoce el recinto.</div>
+      <div class="blog-meta">KEYWORD: ZONAS CONCERT MUSIC FESTIVAL</div>
+      <div class="blog-read-more">LEER MÁS →</div>
+    </div>
+    <div class="blog-card" onclick="showPost('post6')">
+      <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&auto=format&fit=crop&q=70" alt="Comida en un concert music festival: qué comer para disfrutar al máximo" class="blog-img" loading="lazy">
+      <div class="blog-tag">GASTRONOMÍA</div>
+      <div class="blog-title">Comida en un concert music festival: qué comer para disfrutar al máximo</div>
+      <div class="blog-excerpt">Opciones de día y noche, veganas y cómo gestionar el presupuesto gastronómico.</div>
+      <div class="blog-meta">KEYWORD: COMIDA CONCERT MUSIC FESTIVAL</div>
+      <div class="blog-read-more">LEER MÁS →</div>
+    </div>
+    <div class="blog-card" onclick="showPost('post7')">
+      <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=600&auto=format&fit=crop&q=70" alt="Concert music festival: la gran fiesta del pop y rock de los 2000" class="blog-img" loading="lazy">
+      <div class="blog-tag">POP &amp; ROCK</div>
+      <div class="blog-title">Concert music festival: la gran fiesta del pop y rock de los 2000</div>
+      <div class="blog-excerpt">Una generación, una banda sonora. Emoción, nostalgia y espectáculo en un mismo espacio.</div>
+      <div class="blog-meta">KEYWORD: CONCERT MUSIC FESTIVAL POP Y ROCK</div>
+      <div class="blog-read-more">LEER MÁS →</div>
+    </div>
+    <div class="blog-card" onclick="showPost('post8')">
+      <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=600&auto=format&fit=crop&q=70" alt="Guía definitiva del Concert Music Festival: todo lo que necesitas saber" class="blog-img" loading="lazy">
+      <div class="blog-tag">GUÍA DEFINITIVA</div>
+      <div class="blog-title">Guía definitiva del Concert Music Festival: todo lo que necesitas saber</div>
+      <div class="blog-excerpt">El recurso más completo para preparar tu visita desde las entradas hasta los consejos del día.</div>
+      <div class="blog-meta">KEYWORD: GUÍA DEFINITIVA CONCERT MUSIC FESTIVAL</div>
+      <div class="blog-read-more">LEER MÁS →</div>
+    </div>
+    <div class="blog-card" onclick="showPost('post9')">
+      <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=600&auto=format&fit=crop&q=70" alt="Por qué el concert music festival es el evento del año: claves de su crecimiento" class="blog-img" loading="lazy">
+      <div class="blog-tag">CLAVES DEL ÉXITO</div>
+      <div class="blog-title">Por qué el concert music festival es el evento del año: claves de su crecimiento</div>
+      <div class="blog-excerpt">Especialización, curaduría artística, producción de primer nivel y estrategia SEO digital.</div>
+      <div class="blog-meta">KEYWORD: CLAVES ÉXITO CONCERT MUSIC FESTIVAL</div>
+      <div class="blog-read-more">LEER MÁS →</div>
+    </div>
+    <div class="blog-card" onclick="showPost('post10')">
+      <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&auto=format&fit=crop&q=70" alt="La música española de los 2000: David Bisbal, La Oreja de Van Gogh y más" class="blog-img" loading="lazy">
+      <div class="blog-tag">POP ESPAÑOL</div>
+      <div class="blog-title">La música española de los 2000: David Bisbal, La Oreja de Van Gogh y más</div>
+      <div class="blog-excerpt">El pop español de los 2000 tiene su espacio en Back Street 2000. Artistas que marcaron una época.</div>
+      <div class="blog-meta">POP ESPAÑOL · ARTISTAS NACIONALES</div>
+      <div class="blog-read-more">LEER MÁS →</div>
+    </div>
+    </div>
+  </section>
+</div>
+
+
+  <article id="post1" class="blog-post-full" style="display:none">
+    <div class="blog-post">
+      <button class="back-btn" onclick="backToBlog()">← VOLVER AL BLOG</button>
+      <div class="blog-post-header">
+        <div class="blog-post-meta">★ DESTACADO · ARTISTAS EMERGENTES · 2026</div>
+        <h1>Artistas emergentes del concert music festival: nuevas promesas que marcarán este 2026</h1>
+        <p>Los artistas emergentes han ganado gran protagonismo, atrayendo al público joven con sonidos innovadores.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=860&auto=format&fit=crop&q=80" alt="Artistas emergentes del concert music festival: nuevas promesas que marcarán este 2026" class="blog-post-full-img" loading="lazy">
+      <h2>El papel de los artistas emergentes</h2>
+<p>Los festivales modernos ya no solo se centran en grandes estrellas. Los <strong>artistas emergentes del concert music festival</strong> son fundamentales para aportar frescura, diversidad y nuevas tendencias al cartel, conectando con nuevas generaciones de oyentes.</p>
+<h3>Tendencias musicales en 2026</h3>
+<ul><li>Pop urbano con fusiones latinas</li><li>Electrónica emocional con matices indie</li><li>Indie experimental con sonidos alternativos</li><li>Fusión de géneros globales</li><li>Influencias afrobeat y sonidos urbanos modernos</li></ul>
+<h2>Impacto en la industria musical</h2>
+<p>Actuar en el festival les permite ganar visibilidad mediática, acceder a colaboraciones con artistas consolidados y expandirse internacionalmente.</p>
+<h2>Experiencia del público</h2>
+<p>Los artistas emergentes aportan frescura, sorpresa y energía en cada actuación, convirtiéndose muchas veces en descubrimientos inesperados que transforman la experiencia del festival.</p>
+      <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=860&auto=format&fit=crop&q=80" alt="Artistas emergentes del concert music festival: nuevas promesas que marcarán este 2026 detalle" class="blog-post-full-img" loading="lazy">
+    </div>
+  </article>
+  <article id="post2" class="blog-post-full" style="display:none">
+    <div class="blog-post">
+      <button class="back-btn" onclick="backToBlog()">← VOLVER AL BLOG</button>
+      <div class="blog-post-header">
+        <div class="blog-post-meta">GUÍA · SUPERVIVENCIA · 2026</div>
+        <h1>Los mejores tips para sobrevivir a un concert music festival de todo el día</h1>
+        <p>Ropa cómoda, batería externa, hidratación constante y planificación previa.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=860&auto=format&fit=crop&q=80" alt="Los mejores tips para sobrevivir a un concert music festival de todo el día" class="blog-post-full-img" loading="lazy">
+      <h2>Preparación antes del festival</h2>
+<ul><li>Ropa cómoda y ligera adaptada al clima</li><li>Protector solar</li><li>Botella reutilizable de agua</li><li>Batería externa para el móvil</li><li>Mochila ligera con lo esencial</li></ul>
+<h2>Gestión de energía</h2>
+<p>Hacer pausas entre conciertos ayuda a recuperar energía. Una alimentación equilibrada es fundamental: opta por comidas ligeras para mantener el nivel de energía constante.</p>
+<h2>Hidratación constante</h2>
+<p>Beber agua de forma constante ayuda a mantener la energía y prevenir mareos. Evita el consumo excesivo de alcohol o bebidas azucaradas.</p>
+<h2>Seguridad y disfrute social</h2>
+<p>Lleva solo lo necesario, mantén tus objetos bien guardados. Acuerda puntos de encuentro con amigos y reduce el uso del móvil para disfrutar más del momento.</p>
+      <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=860&auto=format&fit=crop&q=80" alt="Los mejores tips para sobrevivir a un concert music festival de todo el día detalle" class="blog-post-full-img" loading="lazy">
+    </div>
+  </article>
+  <article id="post3" class="blog-post-full" style="display:none">
+    <div class="blog-post">
+      <button class="back-btn" onclick="backToBlog()">← VOLVER AL BLOG</button>
+      <div class="blog-post-header">
+        <div class="blog-post-meta">EXPERIENCIA · MOMENTOS · 2026</div>
+        <h1>Los mejores momentos que vivirás en un concert music festival este verano</h1>
+        <p>Desde la llegada hasta el espectáculo final. Instantes que quedarán grabados en tu memoria.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=860&auto=format&fit=crop&q=80" alt="Los mejores momentos que vivirás en un concert music festival este verano" class="blog-post-full-img" loading="lazy">
+      <h2>El inicio del festival</h2>
+<p>La emoción crece a medida que los asistentes se acercan al recinto. Al cruzar la entrada, el impacto visual es inmediato: escenarios gigantes, luces LED y sonido envolvente.</p>
+<h2>Los conciertos principales</h2>
+<p>Los artistas principales ofrecen espectáculos completos que combinan música, visuales y efectos especiales. Las colaboraciones sorpresa generan los momentos más emocionantes e irrepetibles.</p>
+<h2>La conexión entre público y música</h2>
+<p>Miles de personas cantando y disfrutando al mismo ritmo generan una atmósfera irrepetible que convierte canciones normales en recuerdos duraderos.</p>
+<h2>El cierre del festival</h2>
+<p>Las últimas actuaciones suelen ser las más intensas emocionalmente. El cierre con luces y música crea un final espectacular que deja una sensación de nostalgia y felicidad.</p>
+      <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=860&auto=format&fit=crop&q=80" alt="Los mejores momentos que vivirás en un concert music festival este verano detalle" class="blog-post-full-img" loading="lazy">
+    </div>
+  </article>
+  <article id="post4" class="blog-post-full" style="display:none">
+    <div class="blog-post">
+      <button class="back-btn" onclick="backToBlog()">← VOLVER AL BLOG</button>
+      <div class="blog-post-header">
+        <div class="blog-post-meta">VIAJE · ORGANIZACIÓN · 2026</div>
+        <h1>Cómo organizar tu viaje a un concert music festival paso a paso</h1>
+        <p>Desde la compra de entradas hasta el alojamiento. Una guía completa.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=860&auto=format&fit=crop&q=80" alt="Cómo organizar tu viaje a un concert music festival paso a paso" class="blog-post-full-img" loading="lazy">
+      <h2>Planificación previa</h2>
+<p>El primer paso es elegir el festival según tus gustos musicales, presupuesto y ubicación. Compra las entradas con antelación.</p>
+<h3>Tipos de entradas</h3>
+<ul><li>Entrada general</li><li>Entrada VIP</li><li>Abonos de varios días</li></ul>
+<h2>Transporte y alojamiento</h2>
+<p>Coche propio, tren, autobús o avión. Para el alojamiento considera camping, hoteles cercanos o apartamentos turísticos.</p>
+<h2>Qué llevar</h2>
+<ul><li>Documentación y entradas</li><li>Ropa cómoda</li><li>Protección solar</li><li>Batería externa</li><li>Botella reutilizable</li></ul>
+<h2>Presupuesto</h2>
+<p>Incluye: entrada, transporte, alojamiento, comida y bebida. Compra entradas anticipadas para ahorrar.</p>
+      <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=860&auto=format&fit=crop&q=80" alt="Cómo organizar tu viaje a un concert music festival paso a paso detalle" class="blog-post-full-img" loading="lazy">
+    </div>
+  </article>
+  <article id="post5" class="blog-post-full" style="display:none">
+    <div class="blog-post">
+      <button class="back-btn" onclick="backToBlog()">← VOLVER AL BLOG</button>
+      <div class="blog-post-header">
+        <div class="blog-post-meta">RECINTO · ESPACIOS · 2026</div>
+        <h1>Zonas y espacios de un concert music festival: todo lo que debes conocer</h1>
+        <p>Escenarios, zonas chill, VIP, restauración y servicios. Conoce el recinto.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=860&auto=format&fit=crop&q=80" alt="Zonas y espacios de un concert music festival: todo lo que debes conocer" class="blog-post-full-img" loading="lazy">
+      <h2>Tipos de zonas en el recinto</h2>
+<h3>Escenarios</h3>
+<ul><li>Escenario principal con los artistas más destacados</li><li>Escenarios secundarios con propuestas alternativas</li><li>Espacios para artistas emergentes</li></ul>
+<h2>Zonas de restauración</h2>
+<p>Food trucks, restaurantes temporales, opciones vegetarianas y barras. Ubicadas estratégicamente para evitar aglomeraciones.</p>
+<h2>Zonas de descanso y relax</h2>
+<p>Áreas chill out donde puedes sentarte, relajarte y recuperar energía entre conciertos.</p>
+<h2>Zonas VIP</h2>
+<ul><li>Acceso preferente a escenarios</li><li>Áreas privadas con mayor comodidad</li><li>Servicios exclusivos de comida y bebida</li></ul>
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=860&auto=format&fit=crop&q=80" alt="Zonas y espacios de un concert music festival: todo lo que debes conocer detalle" class="blog-post-full-img" loading="lazy">
+    </div>
+  </article>
+  <article id="post6" class="blog-post-full" style="display:none">
+    <div class="blog-post">
+      <button class="back-btn" onclick="backToBlog()">← VOLVER AL BLOG</button>
+      <div class="blog-post-header">
+        <div class="blog-post-meta">GASTRONOMÍA · 2026</div>
+        <h1>Comida en un concert music festival: qué comer para disfrutar al máximo</h1>
+        <p>Opciones de día y noche, veganas y cómo gestionar el presupuesto gastronómico.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=860&auto=format&fit=crop&q=80" alt="Comida en un concert music festival: qué comer para disfrutar al máximo" class="blog-post-full-img" loading="lazy">
+      <h2>Tipos de comida disponibles</h2>
+<ul><li>Food trucks con comida rápida</li><li>Hamburguesas, pizzas y bocadillos</li><li>Opciones internacionales: tacos, noodles, kebab</li><li>Snacks fáciles de consumir</li></ul>
+<h3>Tendencias actuales</h3>
+<ul><li>Opciones vegetarianas y veganas</li><li>Platos saludables y equilibrados</li><li>Ingredientes ecológicos y de proximidad</li></ul>
+<h2>Cómo elegir según el momento</h2>
+<p><strong>Durante el día:</strong> platos ligeros, wraps y ensaladas. <strong>Por la noche:</strong> hamburguesas o platos calientes para recuperar energía.</p>
+<h2>Hidratación y presupuesto</h2>
+<p>Agua, bebidas isotónicas y refrescos. Establece un presupuesto previo y come en horarios estratégicos para evitar colas.</p>
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=860&auto=format&fit=crop&q=80" alt="Comida en un concert music festival: qué comer para disfrutar al máximo detalle" class="blog-post-full-img" loading="lazy">
+    </div>
+  </article>
+  <article id="post7" class="blog-post-full" style="display:none">
+    <div class="blog-post">
+      <button class="back-btn" onclick="backToBlog()">← VOLVER AL BLOG</button>
+      <div class="blog-post-header">
+        <div class="blog-post-meta">POP &amp; ROCK · 2026</div>
+        <h1>Concert music festival: la gran fiesta del pop y rock de los 2000</h1>
+        <p>Una generación, una banda sonora. Emoción, nostalgia y espectáculo en un mismo espacio.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=860&auto=format&fit=crop&q=80" alt="Concert music festival: la gran fiesta del pop y rock de los 2000" class="blog-post-full-img" loading="lazy">
+      <h2>¿Por qué todo el mundo habla de este festival?</h2>
+<p>Es una recreación cuidada de toda una época, donde cada detalle está pensado para transportar al público. Desde la estética hasta el sonido, consigue activar recuerdos que parecían dormidos.</p>
+<h2>Una generación, una banda sonora</h2>
+<p>Pop, rock alternativo, R&amp;B y electrónica. Todo en un mismo lugar. Cada edición se convierte en un punto de encuentro para miles de personas que comparten recuerdos similares.</p>
+<h2>El cartel artístico</h2>
+<p>Backstreet Boys, Britney Spears, Rihanna, Shakira, Justin Timberlake y muchos más. Asistir es reencontrarse con esas voces que acompañaron momentos importantes de la vida.</p>
+<h2>Un evento que va más allá de la música</h2>
+<p>También se ha convertido en un punto de encuentro cultural donde distintas generaciones comparten escenario emocional.</p>
+      <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=860&auto=format&fit=crop&q=80" alt="Concert music festival: la gran fiesta del pop y rock de los 2000 detalle" class="blog-post-full-img" loading="lazy">
+    </div>
+  </article>
+  <article id="post8" class="blog-post-full" style="display:none">
+    <div class="blog-post">
+      <button class="back-btn" onclick="backToBlog()">← VOLVER AL BLOG</button>
+      <div class="blog-post-header">
+        <div class="blog-post-meta">GUÍA DEFINITIVA · 2026</div>
+        <h1>Guía definitiva del Concert Music Festival: todo lo que necesitas saber</h1>
+        <p>El recurso más completo para preparar tu visita desde las entradas hasta los consejos del día.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=860&auto=format&fit=crop&q=80" alt="Guía definitiva del Concert Music Festival: todo lo que necesitas saber" class="blog-post-full-img" loading="lazy">
+      <h2>Qué es y por qué es único</h2>
+<p>Es la única propuesta dedicada íntegramente a celebrar la música de los años 2000, con un cuidado artístico y una producción que lo convierten en referente del sector.</p>
+<h2>Antes del festival</h2>
+<h3>Entradas</h3>
+<p>No esperes para comprar. El festival agota sus accesos con rapidez, especialmente las modalidades VIP y los abonos de varios días.</p>
+<h3>Cómo llegar</h3>
+<p>El festival habilita autobuses lanzadera y coordinación con el transporte público local.</p>
+<h2>Durante el festival</h2>
+<p>Descarga la app oficial: horarios, mapa del recinto y notificaciones en tiempo real. Planifica con márgenes realistas para los desplazamientos entre escenarios.</p>
+<h3>Qué llevar</h3>
+<ul><li>Ropa cómoda adaptada al clima</li><li>Calzado cómodo</li><li>Protección solar</li><li>Batería externa</li><li>Entrada descargada</li></ul>
+      <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=860&auto=format&fit=crop&q=80" alt="Guía definitiva del Concert Music Festival: todo lo que necesitas saber detalle" class="blog-post-full-img" loading="lazy">
+    </div>
+  </article>
+  <article id="post9" class="blog-post-full" style="display:none">
+    <div class="blog-post">
+      <button class="back-btn" onclick="backToBlog()">← VOLVER AL BLOG</button>
+      <div class="blog-post-header">
+        <div class="blog-post-meta">CLAVES DEL ÉXITO · 2026</div>
+        <h1>Por qué el concert music festival es el evento del año: claves de su crecimiento</h1>
+        <p>Especialización, curaduría artística, producción de primer nivel y estrategia SEO digital.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=860&auto=format&fit=crop&q=80" alt="Por qué el concert music festival es el evento del año: claves de su crecimiento" class="blog-post-full-img" loading="lazy">
+      <h2>Especialización: la primera clave</h2>
+<p>En un mercado saturado, la especialización es la herramienta de diferenciación más poderosa. Convertirse en el festival definitivo de los 2000 porque la nostalgia millennial no es una tendencia pasajera sino un motor cultural sostenido.</p>
+<h2>Curaduría artística de alto nivel</h2>
+<p>El equipo de programación analiza la dimensión narrativa de cada artista y lo que representa para la audiencia. Esta visión es la clave que más cuesta replicar.</p>
+<h2>Estrategia digital</h2>
+<p>El festival mantiene una presencia activa en redes sociales los 365 días del año. Un contenido de blog trabajado con keywords como "artistas emergentes concert music festival" construye autoridad digital que se traduce en ventas directas.</p>
+<h2>Visión a largo plazo</h2>
+<p>La capacidad de innovar sin traicionar la identidad que ha construido su éxito. Cada nueva edición incorpora mejoras dentro de un marco coherente.</p>
+      <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=860&auto=format&fit=crop&q=80" alt="Por qué el concert music festival es el evento del año: claves de su crecimiento detalle" class="blog-post-full-img" loading="lazy">
+    </div>
+  </article>
+  <article id="post10" class="blog-post-full" style="display:none">
+    <div class="blog-post">
+      <button class="back-btn" onclick="backToBlog()">← VOLVER AL BLOG</button>
+      <div class="blog-post-header">
+        <div class="blog-post-meta">POP ESPAÑOL · 2026</div>
+        <h1>La música española de los 2000: David Bisbal, La Oreja de Van Gogh y más</h1>
+        <p>El pop español de los 2000 tiene su espacio en Back Street 2000. Artistas que marcaron una época.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=860&auto=format&fit=crop&q=80" alt="La música española de los 2000: David Bisbal, La Oreja de Van Gogh y más" class="blog-post-full-img" loading="lazy">
+      <h2>El pop español que marcó una generación</h2>
+<p>Los años 2000 fueron una época dorada para la música española. Operación Triunfo lanzó a varios artistas al estrellato y la escena nacional vivía un momento de efervescencia creativa sin precedentes.</p>
+<h2>David Bisbal: el fenómeno de OT</h2>
+<p>Uno de los artistas más populares del pop español. Sus canciones fueron grandes éxitos en España y en muchos países de habla hispana.</p>
+<h2>La Oreja de Van Gogh, El Canto del Loco, Amaral y más</h2>
+<p>Un grupo que logró conectar con millones de personas gracias a sus letras emocionales. El Canto del Loco representó el pop rock juvenil. Amaral mezcla pop y rock con una identidad muy reconocible. Fangoria es uno de los proyectos más influyentes del pop electrónico español.</p>
+<h2>Los DJs del throwback</h2>
+<p>DJ Sammy, Juan Magán, DJ Nano y Brian Cross se encargan de las sesiones que mantienen el ambiente del festival con los temas más populares de la década.</p>
+      <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=860&auto=format&fit=crop&q=80" alt="La música española de los 2000: David Bisbal, La Oreja de Van Gogh y más detalle" class="blog-post-full-img" loading="lazy">
+    </div>
+  </article>
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">BACK STREET 2000</div>
+    <div class="footer-tagline">FESTIVAL · BARCELONA · LA MÚSICA QUE MARCÓ UNA GENERACIÓN</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="cartel.html">Cartel</a></li>
+      <li><a href="restauracion.html">Restauración</a></li><li><a href="zonas.html">Zonas</a></li>
+      <li><a href="lockers.html">Lockers</a></li><li><a href="vip.html">Zona VIP</a></li>
+      <li><a href="info.html">Info</a></li><li><a href="blog.html">Blog</a></li>
+      <li><a href="llegar.html">Cómo Llegar</a></li><li><a href="about.html">About Us</a></li>
+      <li><a href="faq.html">FAQ</a></li><li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 BACK STREET 2000 FESTIVAL · WORKSHOP SEO · TODOS LOS DERECHOS RESERVADOS</div>
+  </div>
+</footer>
+<script src="scripts.js"></script>
+</body>
+</html>
