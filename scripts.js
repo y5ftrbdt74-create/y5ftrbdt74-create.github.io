@@ -20,7 +20,11 @@ function generateStars() {
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const target = document.getElementById('page-' + pageId);
-  if (target) { target.classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    animatePageCards(target);
+  }
   document.querySelectorAll('.nav-links > li > a').forEach(a => a.classList.remove('active'));
   const navEl = document.getElementById('nav-' + pageId);
   if (navEl) navEl.classList.add('active');
@@ -87,7 +91,8 @@ function initScrollNav() {
 }
 
 /* ============ CARD ANIMATIONS ============ */
-function initCardAnimations() {
+// Solo anima cards de la página activa para no bloquear las ocultas
+function animatePageCards(pageEl) {
   if (!('IntersectionObserver' in window)) return;
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -97,11 +102,11 @@ function initCardAnimations() {
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.card, .blog-card, .locker-card, .transport-card, .stat-block').forEach((el, i) => {
+  }, { threshold: 0.08 });
+  pageEl.querySelectorAll('.card, .blog-card, .locker-card, .transport-card, .stat-block').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
-    el.style.transition = `opacity 0.5s ease ${i * 0.05}s, transform 0.5s ease ${i * 0.05}s, border-color 0.3s`;
+    el.style.transition = `opacity 0.45s ease ${i * 0.04}s, transform 0.45s ease ${i * 0.04}s, border-color 0.3s`;
     obs.observe(el);
   });
 }
@@ -119,22 +124,18 @@ function handleHash() {
   }
 }
 
-/* ============ LAZY IMAGE OBSERVER ============ */
+/* ============ LAZY IMAGE FADE-IN ============ */
+// Sin IntersectionObserver para imágenes — fade simple al cargar
 function initLazyImages() {
-  if (!('IntersectionObserver' in window)) return;
-  const imgObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        imgObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.05 });
-  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-    img.style.opacity = '0';
-    img.style.transition = 'opacity 0.5s ease';
-    img.addEventListener('load', () => img.style.opacity = '1');
-    imgObs.observe(img);
+  document.querySelectorAll('img').forEach(img => {
+    img.style.transition = 'opacity 0.4s ease';
+    if (img.complete) {
+      img.style.opacity = '1';
+    } else {
+      img.style.opacity = '0';
+      img.addEventListener('load', () => { img.style.opacity = '1'; });
+      img.addEventListener('error', () => { img.style.opacity = '1'; });
+    }
   });
 }
 
@@ -143,15 +144,22 @@ document.addEventListener('DOMContentLoaded', () => {
   generateStars();
   initContactForm();
   initScrollNav();
-  initCardAnimations();
   initLazyImages();
   handleHash();
+
+  // Anima las cards de la página activa al cargar
+  const activePage = document.querySelector('.page.active');
+  if (activePage) animatePageCards(activePage);
 
   window.addEventListener('popstate', e => {
     if (e.state && e.state.page) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       const t = document.getElementById('page-' + e.state.page);
-      if (t) { t.classList.add('active'); window.scrollTo(0, 0); }
+      if (t) {
+        t.classList.add('active');
+        window.scrollTo(0, 0);
+        animatePageCards(t);
+      }
     }
   });
 
