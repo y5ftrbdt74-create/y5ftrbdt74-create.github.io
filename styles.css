@@ -195,45 +195,7 @@ nav {
 }
 @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
 
-/* ============ FULL WIDTH IMAGE BANNER ============ */
-.full-img-wrap {
-  position:relative; width:100%; height:400px; overflow:hidden;
-  z-index:1;
-}
-.full-img {
-  width:100%; height:100%; object-fit:cover; object-position:center;
-  filter:brightness(0.5) saturate(1.3);
-  transition:transform 0.6s ease;
-}
-.full-img-wrap:hover .full-img { transform:scale(1.03); }
-.full-img-overlay {
-  position:absolute; inset:0;
-  display:flex; align-items:center; justify-content:center;
-  background:linear-gradient(135deg,rgba(0,255,255,0.08),rgba(191,0,255,0.08));
-}
-.full-img-overlay span {
-  font-family:'Black Ops One',sans-serif; font-size:clamp(20px,4vw,48px);
-  letter-spacing:0.3em; color:rgba(255,255,255,0.9);
-  text-shadow:0 0 40px rgba(0,255,255,0.5);
-}
-
-/* ============ PAGE HERO IMAGE ============ */
-.page-hero-img {
-  position:relative; width:100%; height:400px; overflow:hidden;
-}
-.page-hero-img img {
-  width:100%; height:100%; object-fit:cover; object-position:center;
-  filter:brightness(0.4) saturate(1.2);
-}
-.page-hero-overlay {
-  position:absolute; inset:0;
-  display:flex; align-items:center; justify-content:center;
-  background:linear-gradient(to bottom,transparent 40%,rgba(2,2,10,0.8));
-}
-.page-hero-overlay h1 {
-  font-family:'Bebas Neue',sans-serif; font-size:clamp(48px,10vw,120px);
-  letter-spacing:0.1em; color:#fff; text-shadow:0 0 40px rgba(0,255,255,0.4);
-}
+/* full-img-wrap y page-hero-img eliminados */
 
 /* ============ TICKER ============ */
 .ticker-wrap { background:var(--neon-pink); overflow:hidden; padding:10px 0; position:relative; z-index:1; }
@@ -497,8 +459,6 @@ footer { border-top:1px solid rgba(255,255,255,0.05); padding:0; text-align:cent
   .zonas-map { grid-template-columns:1fr 1fr; }
   .zona-block.large { grid-column:auto; }
   .zona-block.tall { grid-row:auto; }
-  .page-hero-img { height:260px; }
-  .full-img-wrap { height:260px; }
   .vip-section { padding:32px 20px; }
   .hero-date { padding:10px 20px; letter-spacing:0.1em; }
   .blog-post { padding:40px 1rem; }
@@ -509,7 +469,6 @@ footer { border-top:1px solid rgba(255,255,255,0.05); padding:0; text-align:cent
   section, .content-section { padding:60px 1rem; }
   .transport-grid { grid-template-columns:1fr; }
   .about-stats { grid-template-columns:1fr 1fr; }
-  .page-hero-img { height:200px; }
 }
 
 /* ============ MOBILE MENU (injected by JS) ============ */
